@@ -43,8 +43,16 @@ public class Solution_3 {
             if (nums[i] > 0){
                 continue;
             }
+            // 优化点一: 排序之后越往后越大
+            if (nums[i] + nums[i+1] + nums[i+2] > 0){
+                break;
+            }
+            // 优化点二: 如果nums[i] + nums[nums.length-1] + nums[nums.length-2] < 0,后面j和k怎么遍历都比最大的小
+            if (nums[i] + nums[nums.length-1] + nums[nums.length-2] < 0){
+                continue;
+            }
             while(j < k){
-                // 如果前面的j和后一个i+1相同,既排除了重复的三元组情况,也避免再去比较
+                // 如果前面的j和后一个i+1相同,既排除了重复的三元组情况,也避免再去比较, 这个可以移到满足条件里面
                 if (j > i+1 && nums[j] == nums[j-1]){
                     j++;
                     continue;
