@@ -1,8 +1,6 @@
 package com.oycm.algorithm.b;
 
 import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -97,8 +95,10 @@ public class Solution_2 {
         int result = 0;
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < height.length; i++) {
+            // 栈里面有低点，当高度高于前面的低点
             while (!stack.isEmpty() && height[i] > height[stack.peek()]){
                 int top = stack.pop();
+                // 栈内至少要有两个元素,一个元素的情况时,后面的高度一直在上升
                 if (stack.isEmpty()) {
                     break;
                 }

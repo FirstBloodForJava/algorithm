@@ -1,6 +1,5 @@
 package com.oycm.algorithm.a;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +12,6 @@ public class Solution_3 {
 
     public static void main(String[] args) {
         int[] ints = {0, 0, 0, 0, 0};
-
     }
 
     public List<List<Integer>> threeSum(int[] nums) {

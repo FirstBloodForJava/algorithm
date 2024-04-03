@@ -1,6 +1,5 @@
 package com.oycm.algorithm.a;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +11,6 @@ public class Solution_1 {
 
     public static void main(String[] args) {
         int[] ints = twoSum(new int[]{3, 2, 4}, 6);
-
         System.out.println(ints[0]);
         System.out.println(ints[1]);
     }
