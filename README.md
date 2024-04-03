@@ -51,3 +51,7 @@ hash加速搜索，如暴力搜索的0->n-2，反过来从n-2的顺序查找，�
 
 这个时候如果0向右移动，Min(nums[1],nums[n-1])可能大于或小于等于nums[0]，当小于等于nums[1]时，结果都是小于原来的值；当大于nums[0]，则需要计算结果和之前的比较，取最大。左右之间相互靠近，直到边界重合。
 
+### Solution_2
+42.接雨水：https://leetcode.cn/problems/trapping-rain-water/description/
+
+![image-20240403121855342](http://47.101.155.205/image-20240403121855342.png)
