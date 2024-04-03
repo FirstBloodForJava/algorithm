@@ -35,4 +35,21 @@ public class Solution_1 {
         return result;
     }
 
+    // 贪心+双指针
+    public static int method_2(int[] height){
+        int result = 0;
+        int i = 0;
+        int j = height.length - 1;
+        while (i < j){
+            result = Math.max((Math.min(height[i], height[j])) * (j-i), result);
+            if (height[i] <= height[j]){
+                i++;
+            }else {
+                j--;
+            }
+        }
+
+        return result;
+    }
+
 }
