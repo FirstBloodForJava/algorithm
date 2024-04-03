@@ -77,3 +77,28 @@ hash加速搜索，如暴力搜索的0->n-2，反过来从n-2的顺序查找，�
 前面这个单调栈不行，是因为下一个最大值不是右边的最大值，和动态规划的不一样。
 
 ![image-20240403204840626](http://47.101.155.205/image-20240403204840626.png)
+
+
+
+##c.滑动窗口
+
+### Solution_1
+
+209.长度最小的子数组：https://leetcode.cn/problems/minimum-size-subarray-sum/description/
+
+![image-20240403210230162](http://47.101.155.205/image-20240403210230162.png)
+
+### Solution_2
+
+713.乘积小于K的子数组：https://leetcode.cn/problems/subarray-product-less-than-k/description/
+
+![image-20240403210405436](http://47.101.155.205/image-20240403210405436.png)
+
+
+
+### Solution_3
+
+3.无重复字符的最长字串：https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
+
+![image-20240403210531655](http://47.101.155.205/image-20240403210531655.png)
+
