@@ -47,6 +47,14 @@ int binarySearch(int[] nums, int target){
 
 ~~~
 
+关键属性：
+
+- 二分查找最基本和最基础的形式
+- 查找条件可以在不与元素的两侧进行比较的情况下确定
+- 不需要后处理，因为每一步中，都在检查是否找到了元素。如果达到末尾，则知道未找到改元素。
+
+
+
 初始条件：left=0，right=length-1；
 
 结束条件：left>right；
@@ -90,3 +98,39 @@ int binarySearch(int[] nums, int target){
 同理：如果nums[mid] < nums[0]，[mid,n-1]是升序的，则[mid,r]也是有序的。如果target>nums[mid]且
 
 target<=nums[n-1]\(<nums[0]也可以)，则可以在[mid+1,r]中进行有序的二分查找。
+
+
+
+### 模板二
+
+~~~java
+int binarySearch(int[] nums, int target){
+  if(nums == null || nums.length == 0)
+    return -1;
+
+  int left = 0, right = nums.length;
+  while(left < right){
+    // 防止下标索引越界
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target) { 
+        return mid; 
+    } else if (nums[mid] < target) { 
+        left = mid + 1; 
+    }else { 
+        right = mid; 
+    }
+  }
+
+  // 后处理:
+  // 结束: left == right
+  if(left != nums.length && nums[left] == target) return left;
+  return -1;
+}
+~~~
+
+查找需要访问数组中当前索引及其直接右邻居索引的元素或条件。
+
+关键属性：
+
+- 查找条件需要访问元素的直接右邻居
+- 使用
