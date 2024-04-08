@@ -158,7 +158,7 @@ int binarySearch(int[] nums, int target){
 
 
 
-####寻找旋转排序数组中的最小值
+#### 寻找旋转排序数组中的最小值
 
 ![image-20240407215549339](http://47.101.155.205/image-20240407215549339.png)
 
@@ -223,6 +223,6 @@ int binarySearch(int[] nums, int target) {
 
 
 
-####寻找峰值
+#### 寻找峰值
 
 ![image-20240407220426993](http://47.101.155.205/image-20240407220426993.png)
