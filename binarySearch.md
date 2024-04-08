@@ -126,6 +126,7 @@ int binarySearch(int[] nums, int target){
   if(left != nums.length && nums[left] == target) return left;
   return -1;
 }
+
 ~~~
 
 查找需要访问数组中当前索引及其直接右邻居索引的元素或条件。
@@ -211,7 +212,7 @@ int binarySearch(int[] nums, int target) {
 
 
 
-####在排序数组中查找元素的第一个和最后一个位置
+#### 在排序数组中查找元素的第一个和最后一个位置
 
 ![image-20240407220343892](http://47.101.155.205/image-20240407220343892.png)
 
