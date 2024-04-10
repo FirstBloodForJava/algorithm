@@ -4,9 +4,10 @@ public class Solution_1 {
 
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
-        int[] nums = {1,1,1,1,1,1};
-        System.out.println(solution.minSubArrayLen(7, nums));
-        System.out.println(solution.method_2(7, nums));
+        int[] nums = {1,2,3,4,5};
+        System.out.println(solution.minSubArrayLen(11, nums));
+        System.out.println(solution.method_3(11, nums));
+
     }
 
     public int minSubArrayLen(int target, int[] nums) {
@@ -65,5 +66,54 @@ public class Solution_1 {
             right++;
         }
         return result > nums.length ? 0 : result;
+    }
+
+    /**
+     * 二分法查找
+     * @param target
+     * @param nums
+     * @return
+     */
+    public int method_3(int target, int[] nums){
+        int result = nums.length + 1;
+        int[] sums = new int[nums.length+1];
+        // 前缀和
+        for (int i = 0; i < nums.length; i++) {
+            sums[i+1] = sums[i] + nums[i];
+        }
+        // sums是单调递增的,指定i开始的任意下标，如果存在连续数组，则有sums[right]-sums[i] >= target,长度为right-i
+        // 意思是从i开始的到right的数组和为sum[right+1]-sums[i]
+        // sums[right]表示前面right个元素的和 sums[2]=nums[0]+nums[1]
+        for (int i = 0; i < nums.length; i++) {
+            // 找大于等于，没找到小于0，这里不会为0
+            int right = binarySearchFirstMax(sums, target + sums[i]);
+            if (right > 0){
+                result = Math.min(result, right-i);
+            }
+        }
+        return result > nums.length ? 0 : result;
+    }
+
+    /**
+     * 二分法查找第一个大于等于x的索引
+     * @param arr
+     * @param x
+     * @return
+     */
+    public int binarySearchFirstMax(int[] arr, int x){
+        int left = 0;
+        int right = arr.length - 1;
+        int result = arr.length;
+        while (left <= right){
+            int mid = (left + right) / 2;
+            if (arr[mid] >= x){
+                result = mid;
+                right = mid - 1;
+            }else {
+                left = mid + 1;
+            }
+        }
+
+        return result == arr.length ? -1 : result ;
     }
 }
