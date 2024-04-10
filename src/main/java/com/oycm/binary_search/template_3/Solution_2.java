@@ -17,6 +17,7 @@ public class Solution_2 {
         Solution_2 solution = new Solution_2();
         System.out.println(solution.findClosestElements(arr, 4, 3));
         System.out.println(solution.method_2(arr, 4, 3));
+        System.out.println(solution.method_3(arr, 4, 3));
         System.out.println(solution.binarySearchFirstMax(arr, 6));
         System.out.println(solution.binarySearchLastMin(arr, 3));
     }
@@ -92,6 +93,39 @@ public class Solution_2 {
         }
         if (!rightList.isEmpty()){
             list.addAll(rightList);
+        }
+
+        return list;
+    }
+
+    /**
+     * 之间遍历边界就可以了
+     * @param arr
+     * @param k
+     * @param x
+     * @return
+     */
+    public List<Integer> method_3(int[] arr, int k, int x){
+        List<Integer> list = new ArrayList<>();
+        int right = binarySearchFirstMax(arr, x);
+        int left = right - 1;
+        int i = 0;
+        while (i < k) {
+            if (left == -1){
+                right++;
+            }else if (right == arr.length){
+                left--;
+            }else {
+                if (Math.abs(arr[left]-x) <= Math.abs(arr[right]-x)) {
+                    left--;
+                }else {
+                    right++;
+                }
+            }
+            i++;
+        }
+        while (left < right-1){
+            list.add(arr[++left]);
         }
 
         return list;
