@@ -47,4 +47,32 @@ public class Solution_2 {
 
         return result;
     }
+
+    /**
+     * 对于左端点left到right临界点，如果nums[left]*nums[left+1]*nums[right-1]*nums[right]<k,即再乘以nums[right+1]大于k,这里的连续数组数right-left+1
+     * 则对于left+1端点到right点，必有nums[left+1]*nums[left+2]*nums[right-1]*nums[right]<k,这里不用比较的连续数组数时right-left
+     * 这个时候如果right到右端点了，left还没有到，说明left到right的任意连续数组都满足小于k
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int method_2(int[] nums, int k) {
+        int result = 0;
+        int left = 0;
+        int right = 0;
+        int s = 1;
+        for (int i = 0; i < nums.length; i++) {
+            s *= nums[i];
+            if (s < k) {
+                result++;
+            }else {
+                left++;
+                s = s / nums[left];
+                result += right - left;
+            }
+        }
+
+
+        return result;
+    }
 }
