@@ -44,8 +44,8 @@ public class Solution_1 {
 
     /**
      * 第一个>=target的index
-     * @param nums
-     * @param target
+     * @param nums 升序数组
+     * @param target 目标值
      * @return nums.length-1可能不满足nums[length-1] >= target
      */
     public int binarySearchFirstMax(int[] nums, int target) {
@@ -66,9 +66,9 @@ public class Solution_1 {
 
     /**
      * 最后一个<=target的index
-     * @param nums
-     * @param target
-     * @return
+     * @param nums 升序数组
+     * @param target 目标值
+     * @return 0 可能 nums[0] > target
      */
     public int binarySearchLastMin(int[] nums, int target) {
         int result = 0;
