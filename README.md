@@ -133,3 +133,10 @@ while (s >= k) {
 
 ![image-20240403210531655](http://47.101.155.205/image-20240403210531655.png)
 
+
+
+## d.二分查找
+
+34.在排序数组中查找元素的第一个和最后一个位置：https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+
+![image-20240412195702339](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240412195702339.png)
