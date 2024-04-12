@@ -13,6 +13,7 @@ public class Solution_3 {
         String s = "abcdaefg";
         Solution_3 solution = new Solution_3();
         System.out.println(solution.lengthOfLongestSubstring(s));
+        System.out.println(solution.method_2(s));
     }
 
     /**
@@ -58,5 +59,33 @@ public class Solution_3 {
         }
 
         return Math.max(result, length);
+    }
+
+    /**
+     * 优化 逻辑和前面差不多，不过这里是改变value的值，前面是remove key
+     * @param s
+     * @return
+     */
+    public int method_2(String s){
+        int result = 0;
+        Map<Character,Integer> map = new HashMap<>();
+        char[] chars = s.toCharArray();
+        int left = 0;
+        for (int right = 0; right < chars.length; right++) {
+
+            Integer count = map.get(chars[right]);
+            if (count == null){
+                map.put(chars[right], 1);
+            }else {
+                map.put(chars[right],map.get(chars[right])+1);
+            }
+            while (map.get(chars[right]) > 1){
+                map.put(chars[left], map.get(chars[left])-1);
+                left++;
+            }
+            result = Math.max(result, right-left+1);
+        }
+
+        return result;
     }
 }

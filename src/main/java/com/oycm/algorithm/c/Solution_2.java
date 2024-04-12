@@ -12,6 +12,7 @@ public class Solution_2 {
         System.out.println(solution.numSubarrayProductLessThanK(nums, 18));
         System.out.println(solution.method_3(nums, 18));
         System.out.println(solution.method_2(nums, 18));
+        System.out.println(solution.method_4(nums, 18));
     }
 
     /**
@@ -87,6 +88,26 @@ public class Solution_2 {
         while (right == nums.length && left < right){
             left++;
             result += right - left;
+        }
+        return result;
+    }
+
+    public int method_4(int[] nums, int k) {
+        int result = 0;
+
+        if (k <= 1) {
+            return result;
+        }
+        int left = 0;
+        int s = 1;
+        for (int right = 0; right < nums.length; right++) {
+            s *= nums[right];
+            // 前面排除了k=1的情况
+            while (s >= k){
+                s = s / nums[left];
+                left ++;
+            }
+            result += right - left + 1;
         }
         return result;
     }
