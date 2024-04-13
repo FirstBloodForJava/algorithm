@@ -184,5 +184,26 @@ public int searchBound(int[] nums, int target) {
 
 
 
-## e.
+## e.二分查找进阶
 
+### Solution_1
+
+162.寻找峰值：https://leetcode.cn/problems/find-peak-element/description/
+
+![image-20240413165622186](http://47.101.155.205/image-20240413165622186.png)
+
+
+
+### Solution_2
+
+153.寻找旋转排序数组中的最小值：https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/
+
+![image-20240413165912877](http://47.101.155.205/image-20240413165912877.png)
+
+
+
+### Solution_3
+
+33.搜索旋转排序数组：https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
+
+![image-20240413170130140](http://47.101.155.205/image-20240413170130140.png)
