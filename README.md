@@ -217,11 +217,21 @@ public int searchBound(int[] nums, int target) {
 
 
 
-### Solution_3
+### 33
 
 33.搜索旋转排序数组：https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
 
 ![image-20240413170130140](http://47.101.155.205/image-20240413170130140.png)
+
+假设这个旋转数组对于的最小值所以为x，则[0,x-1]，[x,length-1]是递增的。
+
+当nums[mid]!=target时，我们可以通过nums[mid]和nums[length-1]比较确定部分的有序数组情况。例如
+
+如果nums[mid] > nums[length-1]，则[left,mid]，是升序的，如果target<nums[mid]且target>=nums[0]，则可以在[left,mid]区间进行二分查找，即right=mid-1，否则left=mid+1，两种情况，target>nums[mid]需要往右遍历寻找更大值；target<nums[0]在较小的旋转数组处。
+
+当nums[mid]<=nums[length-1]，则[mid,length-1]是升序的，如果target>nums[mid]且target<=nums[length-1]，则可以在[mid,length-1]进行二分查找，即left=mid+1，否则right=mid-1,两种情况，target>nums[length-1]，需要往左找更大的值，target<num[mid]，需要玩左找更小的值。
+
+
 
 
 
