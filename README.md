@@ -186,11 +186,20 @@ public int searchBound(int[] nums, int target) {
 
 ## e.二分查找进阶
 
-### Solution_1
+### 162
 
 162.寻找峰值：https://leetcode.cn/problems/find-peak-element/description/
 
 ![image-20240413165622186](http://47.101.155.205/image-20240413165622186.png)
+
+对于其中任意的元素下标i，其左右两边情况只有以下4种情况
+
+1. nums[i-1]<nums[i]<nums[i+1]
+2. nums[i-1]<nums[i]>nums[i+1]就是峰值
+3. nums[i-1]>nums[i]>nums[i+1]
+4. nums[i-1]>nums[i]<nums[i+1]
+
+因为nums[-1]=nums[n]=最小，且满足nums[i]!=nums[i+1]情况，所以当nums[i-1]<nums[i]时，往左边查找，可能出现一直递减的情况，没有意义；同理，当nums[i]>nums[i+1]时往右查找也是如此；第4种情况往左往右查找都可以。
 
 
 
