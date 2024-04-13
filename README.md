@@ -154,3 +154,29 @@ right即最后一个小于等于(等于)target的index
 left即第一个大于等于(等于)target的index
 
 right即第一个大于target的index-1
+
+
+
+### 思路三
+
+二分查找target的left即可能大于等于target的index(如果target>nums[length-1]，则left为length)
+
+数组升序，则第一个大于等于target+1的index-1即最后一个target
+
+~~~java
+public int searchBound(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length - 1;
+    while(left <= right) {
+        int mid = (right - left) / 2 + left;
+        if(nums[mid] >= target) {
+            right = mid - 1;
+        }else {
+            left = mid + 1;
+        }
+    }
+    return left;
+}
+
+~~~
+

@@ -2,14 +2,14 @@ package com.oycm.algorithm.d;
 
 public class Solution_1 {
     public static void main(String[] args) {
-        int[] nums = {5,7,7,8,8,10};
+        int[] nums = {5,7,7,8,9,10};
         Solution_1 solution = new Solution_1();
         int[] result1 = solution.searchRange(nums, 8);
         int[] result2 = solution.method_2(nums, 8);
-        System.out.println(solution.binarySearchFirstMax(nums, 8));
-        System.out.println(solution.binarySearchLastMin(nums, 8));
+        int[] result3 = solution.method_3(nums, 8);
         System.out.println(result1[0] + ", " + result1[1]);
         System.out.println(result2[0] + ", " + result2[1]);
+        System.out.println(result3[0] + ", " + result3[1]);
     }
 
     /**
@@ -63,6 +63,8 @@ public class Solution_1 {
                 left = mid + 1;
             }
         }
+        System.out.println("left " + left);
+        System.out.println("result " + result);
         return result;
     }
 
@@ -127,6 +129,35 @@ public class Solution_1 {
         }
 
         return result;
+    }
+
+    public int[] method_3(int[] nums, int target) {
+        int[] result = {-1,-1};
+        if (nums.length == 0){
+            return result;
+        }
+        int left = searchBound(nums, target);
+        int right = searchBound(nums, target+1) - 1;
+        if (left <= right && right < nums.length && nums[left] == target && nums[right] == target){
+            result[0] = left;
+            result[1] = right;
+        }
+
+        return result;
+    }
+
+    public int searchBound(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while(left <= right) {
+            int mid = (right - left) / 2 + left;
+            if(nums[mid] >= target) {
+                right = mid - 1;
+            }else {
+                left = mid + 1;
+            }
+        }
+        return left;
     }
 
 }
