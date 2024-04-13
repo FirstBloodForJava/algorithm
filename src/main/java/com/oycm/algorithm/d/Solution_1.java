@@ -4,10 +4,12 @@ public class Solution_1 {
     public static void main(String[] args) {
         int[] nums = {5,7,7,8,8,10};
         Solution_1 solution = new Solution_1();
-        int[] result = solution.searchRange(nums, 8);
+        int[] result1 = solution.searchRange(nums, 8);
+        int[] result2 = solution.method_2(nums, 8);
         System.out.println(solution.binarySearchFirstMax(nums, 8));
         System.out.println(solution.binarySearchLastMin(nums, 8));
-        System.out.println(result[0] + ", " + result[1]);
+        System.out.println(result1[0] + ", " + result1[1]);
+        System.out.println(result2[0] + ", " + result2[1]);
     }
 
     /**
@@ -81,6 +83,46 @@ public class Solution_1 {
                 left = mid + 1;
             }else {
                 right = mid - 1;
+            }
+        }
+
+        return result;
+    }
+
+    public int[] method_2(int[] nums, int target) {
+        int[] result = {-1,-1};
+        if (nums.length == 0){
+            return result;
+        }
+        int left = searchFirstMax(nums, target, true);
+        int right = searchFirstMax(nums, target, false) - 1;
+        if (left <= right && right < nums.length && nums[left] == target && nums[right] == target){
+            result[0] = left;
+            result[1] = right;
+        }
+
+        return result;
+    }
+
+    /**
+     *  升序数组查找第一个大于或大于等于target的index
+     * @param nums 升序数组
+     * @param target 搜索大于的目标值
+     * @param flag true 大于等于target的 false 表示大于target
+     * @return 满足返回index，不满足则返回nums.length
+     */
+    public int searchFirstMax(int[] nums, int target, boolean flag) {
+        int result = nums.length;
+        int left = 0;
+        int right = nums.length - 1;
+        while (left <= right) {
+            int mid = (right - left) / 2 + left;
+            if (nums[mid] > target || (flag && nums[mid] >= target)) {
+                result = mid;
+                // nums[mid] > target 则[mid,right]肯定>target
+                right = mid - 1;
+            }else {
+                left = mid + 1;
             }
         }
 
