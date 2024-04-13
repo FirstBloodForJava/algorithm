@@ -207,3 +207,25 @@ public int searchBound(int[] nums, int target) {
 33.搜索旋转排序数组：https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
 
 ![image-20240413170130140](http://47.101.155.205/image-20240413170130140.png)
+
+
+
+## f.反转链表
+
+### 206
+
+206.反转链表：https://leetcode.cn/problems/reverse-linked-list/description/
+
+![image-20240413171029806](http://47.101.155.205/image-20240413171029806.png)
+
+### 92
+
+92.反转链表 II：https://leetcode.cn/problems/reverse-linked-list-ii/description/
+
+![image-20240413171254226](http://47.101.155.205/image-20240413171254226.png)
+
+### 25
+
+25.K 个一组翻转链表：https://leetcode.cn/problems/reverse-nodes-in-k-group/description/
+
+![image-20240413171425645](http://47.101.155.205/image-20240413171425645.png)
