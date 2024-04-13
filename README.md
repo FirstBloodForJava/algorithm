@@ -203,11 +203,17 @@ public int searchBound(int[] nums, int target) {
 
 
 
-### Solution_2
+### 153
 
 153.寻找旋转排序数组中的最小值：https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/
 
 ![image-20240413165912877](http://47.101.155.205/image-20240413165912877.png)
+
+对于这个旋转数组，当旋转不为n次时，nums[0]>nums[n-1]，所以当nums[0]<nums[n-1]时，意味着旋转了n次，0即是最小，n=1时，nums[0]<=nums[n-1]，0即时最小。
+
+对于中间的mid，nums[mid] > nums[0]，[left,mid]肯定升序的所以left=mid+1
+
+对于nums[mid]<nums[0]，[mid,right]也是升序的，right=mid
 
 
 
