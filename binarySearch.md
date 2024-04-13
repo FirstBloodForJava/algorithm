@@ -27,6 +27,8 @@
 
 ### 模板一
 
+区间为[left,right]，左闭右闭，left=mid+1，right=mid-1
+
 ~~~java
 int binarySearch(int[] nums, int target){
   if(nums == null || nums.length == 0)
@@ -103,6 +105,8 @@ target<=nums[n-1]\(<nums[0]也可以)，则可以在[mid+1,r]中进行有序的�
 
 ### 模板二
 
+区间为[left,right)左闭右开，左闭left=mid+1
+
 ~~~java
 int binarySearch(int[] nums, int target){
   if(nums == null || nums.length == 0)
@@ -166,6 +170,8 @@ int binarySearch(int[] nums, int target){
 
 
 ### 模板三
+
+区间留元素或左开右开(left,right)，则left=mid，right=mid
 
 ~~~java
 int binarySearch(int[] nums, int target) {
