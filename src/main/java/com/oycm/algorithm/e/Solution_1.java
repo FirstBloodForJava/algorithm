@@ -3,9 +3,10 @@ package com.oycm.algorithm.e;
 public class Solution_1 {
 
     public static void main(String[] args) {
-        int[] nums = {};
+        int[] nums = {1,2,3,1};
         Solution_1 solution = new Solution_1();
         System.out.println(solution.findPeakElement(nums));
+        System.out.println(solution.method_2(nums));
     }
 
     /**
@@ -68,6 +69,25 @@ public class Solution_1 {
             return leftV[0] > rightV[0] ? 1: -1;
         }
         return leftV[1] > rightV[1] ? 1 : -1;
+    }
+
+    /**
+     * 当nums[mid] > nums[mid+1],符合条件的肯定是在左边，所以right=mid,直到left+1<right退出循环
+     * @param nums
+     * @return 峰值
+     */
+    public int method_2(int[] nums) {
+        int left = -1;
+        int right = nums.length - 1;
+        while (left+1 < right){
+            int mid = (right - left) / 2 + left;
+            if (nums[mid] > nums[mid+1]) {
+                right = mid;
+            }else {
+                left = mid;
+            }
+        }
+        return right;
     }
 
 }
