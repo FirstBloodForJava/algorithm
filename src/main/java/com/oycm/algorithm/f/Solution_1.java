@@ -25,5 +25,23 @@ public class Solution_1 {
 
         return result;
     }
+
+    /**
+     * 空间复杂度优化
+     * @param head
+     * @return
+     */
+    public ListNode method_1(ListNode head) {
+        ListNode result = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = result;
+            result = curr;
+            curr = next;
+        }
+
+        return result;
+    }
 }
 
