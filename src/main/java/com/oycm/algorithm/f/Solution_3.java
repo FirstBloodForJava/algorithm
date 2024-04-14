@@ -16,8 +16,8 @@ public class Solution_3 {
         l4.next = l5;
         System.out.println(l1);
         System.out.println(solution.copyNode(l1));
-        System.out.println(solution.reverseKGroup(l1, 5));
-        System.out.println(solution.method_2(l1, 3));
+        System.out.println(solution.reverseKGroup(l1, 2));
+        System.out.println(solution.method_2(l1, 2));
 
     }
 
@@ -118,6 +118,9 @@ public class Solution_3 {
                 // curr 未反转的剩余节点
                 curr = next;
             }
+            //  dummyNode=p0 -> 1 -> 2 -> 3 -> 4 -> 5 k=2
+            //1.dummyNode -> 2 -> 1(p0) -> 3 -> 4 -> 5
+            //2.dummyNode -> 2 -> 1 -> 4 -> 3(p0) ->5
             ListNode next = p0.next;
             p0.next.next = curr;
             p0.next = pre;
