@@ -92,4 +92,35 @@ public class Solution_3 {
 
         return result;
     }
+
+    public ListNode method_2(ListNode head, int k) {
+        int n = 0;
+        ListNode curr = head;
+        while (curr != null) {
+            n++;
+            curr = curr.next;
+        }
+        ListNode dummyNode = new ListNode(-1, head);
+        ListNode p0 = dummyNode;
+        ListNode pre = null;
+        curr = p0.next;
+
+        while (n >= k) {
+            n -= k;
+
+            for (int i = 0; i < k; i++) {
+                ListNode next = curr.next;
+                curr.next = pre;
+                pre = curr;
+                curr = next;
+            }
+            ListNode next = p0.next;
+            p0.next.next = curr;
+            p0.next = pre;
+            p0 = next;
+
+        }
+
+        return dummyNode.next;
+    }
 }
