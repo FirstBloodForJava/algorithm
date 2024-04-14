@@ -254,3 +254,33 @@ public int searchBound(int[] nums, int target) {
 25.K 个一组翻转链表：https://leetcode.cn/problems/reverse-nodes-in-k-group/description/
 
 ![image-20240413171425645](http://47.101.155.205/image-20240413171425645.png)
+
+
+
+## g.快慢指针
+
+### 876
+
+876.链表的中间结点：https://leetcode.cn/problems/middle-of-the-linked-list/description/
+
+![image-20240414180258138](http://47.101.155.205/image-20240414180258138.png)
+
+### 141
+
+141.环形链表：https://leetcode.cn/problems/linked-list-cycle/description/
+
+![image-20240414180425696](http://47.101.155.205/image-20240414180425696.png)
+
+### 142
+
+142.环形链表 II：https://leetcode.cn/problems/linked-list-cycle-ii/description/
+
+![image-20240414180547708](http://47.101.155.205/image-20240414180547708.png)
+
+
+
+### 143
+
+143.重排链表：https://leetcode.cn/problems/reorder-list/description/
+
+![image-20240414180712223](http://47.101.155.205/image-20240414180712223.png)
