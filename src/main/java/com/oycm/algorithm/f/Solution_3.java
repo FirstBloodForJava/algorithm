@@ -17,6 +17,7 @@ public class Solution_3 {
         System.out.println(l1);
         System.out.println(solution.copyNode(l1));
         System.out.println(solution.reverseKGroup(l1, 5));
+        System.out.println(solution.method_2(l1, 3));
 
     }
 
@@ -108,10 +109,13 @@ public class Solution_3 {
         while (n >= k) {
             n -= k;
 
+            // 链表反转
             for (int i = 0; i < k; i++) {
                 ListNode next = curr.next;
                 curr.next = pre;
+                // pre 反转之后的头节点
                 pre = curr;
+                // curr 未反转的剩余节点
                 curr = next;
             }
             ListNode next = p0.next;
