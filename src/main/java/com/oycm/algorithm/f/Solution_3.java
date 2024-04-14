@@ -15,6 +15,7 @@ public class Solution_3 {
         l3.next = l4;
         l4.next = l5;
         System.out.println(l1);
+        System.out.println(solution.copyNode(l1));
         System.out.println(solution.reverseKGroup(l1, 5));
 
     }
@@ -24,19 +25,16 @@ public class Solution_3 {
     }
 
     public ListNode copyNode(ListNode head) {
-        ListNode result = null;
-        ListNode temp = null;
-        while (head != null) {
-            if (result == null) {
-                result = head;
-                temp = head;
-            } else {
-                temp.next = head;
-                temp = temp.next;
-            }
-            head = head.next;
+        ListNode dummyNode = new ListNode(-1);
+        ListNode pre = head;
+        dummyNode.next = pre;
+        while (head != null){
+            ListNode next = head.next;
+            pre.next = next;
+            pre = pre.next;
+            head = next;
         }
-        return result;
+        return dummyNode.next;
     }
 
     public ListNode method_1(ListNode head, int k) {
