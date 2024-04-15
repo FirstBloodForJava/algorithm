@@ -284,3 +284,37 @@ public int searchBound(int[] nums, int target) {
 143.重排链表：https://leetcode.cn/problems/reorder-list/description/
 
 ![image-20240414180712223](http://47.101.155.205/image-20240414180712223.png)
+
+
+
+## h.前后指针
+
+### 237
+
+237.删除链表中的节点：https://leetcode.cn/problems/delete-node-in-a-linked-list/description/
+
+![image-20240415210735285](http://47.101.155.205/image-20240415210735285.png)
+
+![image-20240415210802812](http://47.101.155.205/image-20240415210802812.png)
+
+
+
+### 19 
+
+19.删除链表的倒数第 N 个结点：https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/
+
+![image-20240415210902897](http://47.101.155.205/image-20240415210902897.png)
+
+
+
+### 83
+
+83.删除排序链表中的重复元素：https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/
+
+![image-20240415211147556](http://47.101.155.205/image-20240415211147556.png)
+
+### 82
+
+82.删除排序链表中的重复元素 II：https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/
+
+![image-20240415211320608](http://47.101.155.205/image-20240415211320608.png)
