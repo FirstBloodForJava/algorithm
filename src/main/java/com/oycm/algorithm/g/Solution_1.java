@@ -46,4 +46,28 @@ public class Solution_1 {
         }
         return head;
     }
+
+    /**
+     * 慢指针每次移动一个节点，快指针移动两个节点
+     * 1 -> n的,有n个节点
+     * 奇数情况
+     * 快指针移动情况: 1 -> 3 -> 5 -> n是奇数,退出循环条件快指针.next == null
+     * 慢指针移动情况: 1 -> 2 -> 3 -> (1+n)/2 结果就是当前的慢指针
+     * 偶数情况
+     * 快指针移动情况: 1 -> 3 -> 5 -> n是偶数,退出循环条件快指针==null
+     * 慢指针移动情况: 1 -> 2 -> 3 -> (1+n)/2+1 结果就是当前的慢指针
+     *
+     * @param head 单向链表头头节点
+     * @return 中间节点
+     */
+    public ListNode method_2(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
 }
