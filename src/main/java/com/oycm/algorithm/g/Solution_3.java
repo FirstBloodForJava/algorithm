@@ -31,4 +31,14 @@ public class Solution_3 {
 
         return result;
     }
+
+    /**
+     * a + n(b+c) + b= a + (n+1) b + nc
+     * @param head
+     * @return
+     */
+    public ListNode method_2(ListNode head) {
+
+        return null;
+    }
 }
