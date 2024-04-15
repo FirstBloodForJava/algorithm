@@ -31,4 +31,22 @@ public class ListNode {
 
         return list.toString();
     }
+
+    public static ListNode getHead(int n) {
+        if (n <= 0) {
+            return null;
+        }
+        List<ListNode> list = new ArrayList<>();
+        int i = 1;
+        while (n > 0) {
+            list.add(new ListNode(i));
+            i++;
+            n--;
+        }
+
+        for (int j = 1; j < list.size(); j++) {
+            list.get(j-1).next = list.get(j);
+        }
+        return list.get(0);
+    }
 }
