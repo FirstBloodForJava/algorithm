@@ -2,6 +2,8 @@ package com.oycm.algorithm.h;
 
 import com.oycm.algorithm.ListNode;
 
+import java.util.Stack;
+
 public class Solution_2 {
     public static void main(String[] args) {
         Solution_2 solution = new Solution_2();
@@ -116,6 +118,25 @@ public class Solution_2 {
         }
         // left下一个节点要被删除
         left.next = left.next.next;
+
+        return dummy.next;
+    }
+
+    public ListNode method_3(ListNode head, int n) {
+        ListNode dummy = new ListNode(-1, head);
+        Stack<ListNode> stack = new Stack<>();
+        ListNode temp = dummy;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+
+        while (n > 0) {
+            stack.pop();
+            n--;
+        }
+        temp = stack.peek();
+        temp.next = temp.next.next;
 
         return dummy.next;
     }
