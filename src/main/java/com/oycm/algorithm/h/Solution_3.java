@@ -27,13 +27,10 @@ public class Solution_3 {
 
             if (curr.val == next.val) {
                 // 删除节点 curr不变,curr.next->next.next
-                ListNode nextNext = next.next;
                 // 最后节点做判断,如果和curr相等,则移除最后节点
-                if (nextNext == null) {
-                    if (curr.val == next.val) {
-                        curr.next = nextNext;
-                    }
-                    break;
+                if (next.next == null) {
+                    next = null;
+                    curr.next = null;
                 }else {
                     curr.next = next.next;
                     next = curr.next;
@@ -44,6 +41,29 @@ public class Solution_3 {
                 next = curr.next;
             }
         }
+        return head;
+    }
+
+    /**
+     * 优化: curr的下一个节点不为空，和它比较，
+     * 相同则删除，curr.next->curr.next.next，再继续比较curr和curr.next
+     * 不相同则curr=curr.next，curr.next!=null，继续比较，指定curr.next==null退出循环
+     * @param head
+     * @return
+     */
+    public ListNode method_1(ListNode head) {
+        if (head == null) return head;
+
+        ListNode curr = head;
+        while (curr.next != null) {
+            ListNode next = curr.next;
+            if (curr.val == next.val) {
+                curr.next = next.next;
+            }else {
+                curr = curr.next;
+            }
+        }
+
         return head;
     }
 }
