@@ -14,7 +14,24 @@ public class Solution_4 {
      * @return
      */
     public ListNode deleteDuplicates(ListNode head) {
-        return null;
+        ListNode dummy = new ListNode(-1, head);
+        ListNode curr = dummy;
+        while (curr.next != null && curr.next.next != null) {
+            // 相同节点删除
+            if (curr.next.val == curr.next.next.val) {
+                ListNode temp = curr.next.next;
+                while (temp != null && temp.val == curr.next.val) {
+                    temp = temp.next;
+                }
+                // 删除中间相同的节点
+                curr.next = temp;
+
+            }else {
+                curr = curr.next;
+            }
+        }
+
+        return dummy.next;
     }
 
     public ListNode method_1(ListNode head) {
