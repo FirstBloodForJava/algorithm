@@ -318,3 +318,45 @@ public int searchBound(int[] nums, int target) {
 82.删除排序链表中的重复元素 II：https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/
 
 ![image-20240415211320608](http://47.101.155.205/image-20240415211320608.png)
+
+
+
+## i.二叉树入门
+
+### 104
+
+104.二叉树的最大深度：https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/
+
+![image-20240416205712618](http://47.101.155.205/image-20240416205712618.png)
+
+## j.二叉树相同/对称/平衡
+
+### 100
+
+100.相同的树：https://leetcode.cn/problems/same-tree/description/
+
+![image-20240416210209641](http://47.101.155.205/image-20240416210209641.png)
+
+### 101
+
+101.对称二叉树：https://leetcode.cn/problems/symmetric-tree/description/
+
+![image-20240416210314097](http://47.101.155.205/image-20240416210314097.png)
+
+![image-20240416210331516](http://47.101.155.205/image-20240416210331516.png)
+
+### 110
+
+110.平衡二叉树：https://leetcode.cn/problems/balanced-binary-tree/description/
+
+![image-20240416210508801](http://47.101.155.205/image-20240416210508801.png)
+
+![image-20240416210526935](http://47.101.155.205/image-20240416210526935.png)
+
+
+
+### 199
+
+199.二叉树的右视图：https://leetcode.cn/problems/binary-tree-right-side-view/description/
+
+![image-20240416210643370](http://47.101.155.205/image-20240416210643370.png)
