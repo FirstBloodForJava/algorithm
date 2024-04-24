@@ -32,7 +32,7 @@ public class Solution_4 {
     }
 
     /**
-     * 将结果作为局变量
+     * 将结果作为局变量，空间优化
      * @param node
      * @param height
      */
