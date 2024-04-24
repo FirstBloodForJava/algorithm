@@ -360,3 +360,13 @@ public int searchBound(int[] nums, int target) {
 199.二叉树的右视图：https://leetcode.cn/problems/binary-tree-right-side-view/description/
 
 ![image-20240416210643370](http://47.101.155.205/image-20240416210643370.png)
+
+
+
+## k.二叉树搜索
+
+### 98
+
+98.验证二叉搜索树：https://leetcode.cn/problems/validate-binary-search-tree/
+
+![image-20240424205913657](http://47.101.155.205/image-20240424205913657.png)
