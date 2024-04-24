@@ -11,6 +11,14 @@ public class Solution_2 {
      * @return
      */
     public boolean isSymmetric(TreeNode root) {
-        return false;
+        if (root == null) return true;
+        return recursion(root.left, root.right);
+    }
+
+    public boolean recursion(TreeNode left, TreeNode right) {
+        if (left == null || right == null) {
+            return left == right;
+        }
+        return left.val == right.val && recursion(left.left, right.right) && recursion(left.right, right.left);
     }
 }
