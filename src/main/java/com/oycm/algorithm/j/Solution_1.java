@@ -15,10 +15,12 @@ public class Solution_1 {
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null || q == null) {
-            if (p == null && q == null) {
+            /*if (p == null && q == null) {
                 return true;
             }
-            return false;
+            return false;*/
+            // 优化
+            return p == q;
         }
         if (p.val != q.val) {
             return false;
