@@ -82,7 +82,7 @@ public class Solution_1 {
         long pre = Long.MIN_VALUE;
         while (!stack.isEmpty() || root != null) {
 
-            // 栈是先进后出，把最左边的字数压栈，最底下的左子树先弹栈
+            // 栈是先进后出，把最左边的树压栈，最底下的左子树先弹栈
             while (root != null) {
                 stack.push(root);
                 root = root.left;
