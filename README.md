@@ -377,7 +377,7 @@ public int searchBound(int[] nums, int target) {
 
 236.二叉树的最近公共祖先：https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/
 
-![image-20240425200321937](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240425200321937.png)
+![image-20240425200321937](http://47.101.155.205/image-20240425200321937.png)
 
 
 
@@ -385,4 +385,4 @@ public int searchBound(int[] nums, int target) {
 
 235.二叉搜索树的最近公共祖先：https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
-![image-20240425200427349](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240425200427349.png)
+![image-20240425200427349](http://47.101.155.205/image-20240425200427349.png)
