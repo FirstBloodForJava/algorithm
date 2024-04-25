@@ -370,3 +370,19 @@ public int searchBound(int[] nums, int target) {
 98.验证二叉搜索树：https://leetcode.cn/problems/validate-binary-search-tree/
 
 ![image-20240424205913657](http://47.101.155.205/image-20240424205913657.png)
+
+## l.二叉树
+
+### 236
+
+236.二叉树的最近公共祖先：https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/
+
+![image-20240425200321937](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240425200321937.png)
+
+
+
+### 235
+
+235.二叉搜索树的最近公共祖先：https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+![image-20240425200427349](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240425200427349.png)
