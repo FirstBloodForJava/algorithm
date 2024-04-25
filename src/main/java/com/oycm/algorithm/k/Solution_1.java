@@ -2,7 +2,29 @@ package com.oycm.algorithm.k;
 
 import com.oycm.algorithm.TreeNode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class Solution_1 {
+
+    public static void main(String[] args) {
+        Solution_1 solution = new Solution_1();
+
+        TreeNode t1 = new TreeNode(10);
+        TreeNode t2L = new TreeNode(8);
+        TreeNode t3L = new TreeNode(6);
+        TreeNode t4L = new TreeNode(4);
+        TreeNode t4R = new TreeNode(7);
+        t1.left = t2L;
+        t2L.left = t3L;
+        t3L.left = t4L;
+        t3L.right = t4R;
+
+        System.out.println(solution.method_2_1(t1));
+
+
+
+    }
 
     /**二叉搜索树定义：
      * 节点的左子树(所有)只包含 小于 当前节点的数
@@ -16,6 +38,7 @@ public class Solution_1 {
 
         boolean preorder = method_1(root, Long.MIN_VALUE, Long.MAX_VALUE);
         boolean inorder = method_2(root);
+        boolean inorder_1 = method_2_1(root);
         return false;
     }
 
@@ -38,7 +61,7 @@ public class Solution_1 {
     private long pre = Long.MIN_VALUE;
 
     /** 定义一个最小值pre，利用左节点的值总较小的，如果后面节点的值结果小于等于上一个左节点，则不是
-     * 中序遍历，
+     * 中序遍历：先遍历左子树，再遍历根节点，最后遍历右子树，二叉搜索树保证了左子树的节点的值均小于根节点的值，根节点的值均小于右子树的值，因此中序遍历以后得到的序列一定是升序序列
      * @param root
      * @return
      */
@@ -52,5 +75,29 @@ public class Solution_1 {
         pre = root.val;
 
         return method_2(root.right);
+    }
+
+    public boolean method_2_1(TreeNode root) {
+        Deque<TreeNode> stack = new LinkedList<>();
+        long pre = Long.MIN_VALUE;
+        while (!stack.isEmpty() || root != null) {
+
+            // 栈是先进后出，把最左边的字数压栈，最底下的左子树先弹栈
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            root = stack.pop();
+
+            if (root.val <= pre) {
+                return false;
+            }
+            pre = root.val;
+            root = root.right;
+
+        }
+
+        return true;
     }
 }
