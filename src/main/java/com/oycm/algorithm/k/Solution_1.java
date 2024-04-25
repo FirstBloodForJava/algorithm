@@ -39,6 +39,7 @@ public class Solution_1 {
         boolean preorder = method_1(root, Long.MIN_VALUE, Long.MAX_VALUE);
         boolean inorder = method_2(root);
         boolean inorder_1 = method_2_1(root);
+        boolean postorder = method3(root)[1] != Long.MAX_VALUE;
         return false;
     }
 
@@ -99,5 +100,26 @@ public class Solution_1 {
         }
 
         return true;
+    }
+
+    /**
+     * method3(root) != Long.MAX_VALUE
+     * 后续遍历，自底向上计算子问题的过程
+     * @param root
+     * @return long[0] 最小值 long[1]最大值
+     */
+    public long[] method3(TreeNode root) {
+        if (root == null) {
+            return new long[] {Long.MAX_VALUE, Long.MIN_VALUE};
+        }
+        long[] left = method3(root.left);
+        long[] right = method3(root.right);
+
+        long x = root.val;
+        if (x <= left[1] || x >= right[0]) {
+            return new long[] {Long.MIN_VALUE, Long.MAX_VALUE};
+        }
+        return new long[]{Math.min(left[0], x), Math.max(right[1], x)};
+
     }
 }
