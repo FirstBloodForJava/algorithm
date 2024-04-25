@@ -15,7 +15,7 @@ public class Solution_1 {
     public boolean isValidBST(TreeNode root) {
 
         boolean preorder = method_1(root, Long.MIN_VALUE, Long.MAX_VALUE);
-
+        boolean inorder = method_2(root);
         return false;
     }
 
@@ -32,5 +32,25 @@ public class Solution_1 {
         if (node.val <= min || node.val >= max) return false;
 
         return method_1(node.left, min, node.val) && method_1(node.right, node.val, max);
+    }
+
+
+    private long pre = Long.MIN_VALUE;
+
+    /** 定义一个最小值pre，利用左节点的值总较小的，如果后面节点的值结果小于等于上一个左节点，则不是
+     * 中序遍历，
+     * @param root
+     * @return
+     */
+    public boolean method_2(TreeNode root) {
+        if (root == null) return true;
+
+        if (!method_2(root.left) || root.val <= pre) {
+            return false;
+        }
+
+        pre = root.val;
+
+        return method_2(root.right);
     }
 }
