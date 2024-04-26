@@ -10,9 +10,9 @@ public class Solution_2 {
      * 2.p和q都在左子树：返回递归左子树的结果
      * 3.p和q都在右子树：返回递归右子树的结果
      * 4.其他：
-     * 4.1.p和q分别在左右子树
-     * 4.2.当前节点是p
-     * 4.3.当前节点q
+     * 4.1.p和q分别在左右子树，当前节点就是结果
+     * 4.2.当前节点是p，当前节点就是结果
+     * 4.3.当前节点q，当前节点就是结果
      * https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
      * @param root
      * @param p
