@@ -455,3 +455,17 @@ public int searchBound(int[] nums, int target) {
 
 ![image-20240428224614260](http://47.101.155.205/image-20240428224614260.png)
 
+
+## p.回溯-排列型
+
+###46
+
+46.全排列：https://leetcode.cn/problems/permutations/
+
+![image-20240428224921886](http://47.101.155.205/image-20240428224921886.png)
+
+### 51
+
+51.N皇后：https://leetcode.cn/problems/n-queens/
+
+![image-20240428225020151](http://47.101.155.205/image-20240428225020151.png)
