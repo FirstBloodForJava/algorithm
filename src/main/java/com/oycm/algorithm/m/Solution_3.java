@@ -2,6 +2,8 @@ package com.oycm.algorithm.m;
 
 import com.oycm.algorithm.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Solution_3 {
@@ -33,5 +35,32 @@ public class Solution_3 {
         deep(node.left, height+1);
         deep(node.right, height+1);
 
+    }
+
+    /**
+     * 返回层序遍历的最后一个元素的第一个值
+     * @param root
+     * @return
+     */
+    public int method_2(TreeNode root) {
+
+        return 1;
+    }
+
+    /**
+     * 返回从右向左层序遍历，最后出现的left节点就是最左下角的值
+     * @param root
+     * @return
+     */
+    public int method_3(TreeNode root) {
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            root = queue.poll();
+            if (root.right != null) queue.add(root.right);
+            if (root.left != null) queue.add(root.left);
+        }
+        return root.val;
     }
 }
