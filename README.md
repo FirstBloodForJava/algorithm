@@ -432,3 +432,26 @@ public int searchBound(int[] nums, int target) {
 131.分割回文串：https://leetcode.cn/problems/palindrome-partitioning/
 
 ![image-20240428224132171](http://47.101.155.205/image-20240428224132171.png)
+
+
+
+## o.回溯-组合型
+
+### 77
+
+77.组合：https://leetcode.cn/problems/combinations/
+
+![image-20240428224432510](http://47.101.155.205/image-20240428224432510.png)
+
+### 216
+
+216.组合总和 III：https://leetcode.cn/problems/combination-sum-iii/
+
+![image-20240428224522034](http://47.101.155.205/image-20240428224522034.png)
+
+### 22
+
+22.括号生成：https://leetcode.cn/problems/generate-parentheses/
+
+![image-20240428224614260](http://47.101.155.205/image-20240428224614260.png)
+
