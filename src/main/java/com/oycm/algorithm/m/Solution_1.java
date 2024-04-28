@@ -2,6 +2,7 @@ package com.oycm.algorithm.m;
 
 import com.oycm.algorithm.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Solution_1 {
@@ -13,6 +14,21 @@ public class Solution_1 {
      * @return
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+        deep(root, 0);
+        return result;
+    }
+
+    List<List<Integer>> result = new ArrayList<>();
+    public void deep(TreeNode node, int height) {
+        if (node == null) return;
+        if (result.size() == height) {
+            List<Integer> list = new ArrayList<>();
+            list.add(node.val);
+            result.add(list);
+        }else {
+            result.get(height).add(node.val);
+        }
+        deep(node.left, height+1);
+        deep(node.right, height+1);
     }
 }
