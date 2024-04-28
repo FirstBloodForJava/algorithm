@@ -410,3 +410,25 @@ public int searchBound(int[] nums, int target) {
 513.找树左下角的值：https://leetcode.cn/problems/find-bottom-left-tree-value/
 
 ![image-20240427181819009](http://47.101.155.205/image-20240427181819009.png)
+
+
+
+## n.回溯-子集型
+
+### 17
+
+17.电话号码的字母组合：https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
+
+![image-20240428223923028](http://47.101.155.205/image-20240428223923028.png)
+
+### 78
+
+78.子集：https://leetcode.cn/problems/subsets/
+
+![image-20240428224017653](http://47.101.155.205/image-20240428224017653.png)
+
+### 131
+
+131.分割回文串：https://leetcode.cn/problems/palindrome-partitioning/
+
+![image-20240428224132171](http://47.101.155.205/image-20240428224132171.png)
