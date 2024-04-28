@@ -2,8 +2,10 @@ package com.oycm.algorithm.m;
 
 import com.oycm.algorithm.TreeNode;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class Solution_1 {
 
@@ -38,7 +40,7 @@ public class Solution_1 {
     }
 
     /**
-     * 双数组层序遍历
+     * 双数组层序遍历-两个数组
      * @param root
      * @return
      */
@@ -60,6 +62,26 @@ public class Solution_1 {
             ans.add(list);
         }
 
+        return ans;
+    }
+
+    public List<List<Integer>> method_3(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int n = queue.size();
+            List<Integer> list = new ArrayList<>(n);
+            while (n > 0) {
+                TreeNode node = queue.poll();
+                list.add(node.val);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+                n--;
+            }
+            ans.add(list);
+        }
         return ans;
     }
 }
