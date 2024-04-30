@@ -67,6 +67,11 @@ public class Solution_2 {
         temp.remove(temp.size()-1);
     }
 
+    /**
+     * {1, 2, 3} 对于1 可以组合1,2 1,3, 1,2,3；1固定使用，后面的2, 3可以作为前面的dfs来进行选/不选
+     * @param nums
+     * @return
+     */
     private List<List<Integer>> method_2(int[] nums) {
         this.nums = nums;
         ans.add(new ArrayList<>(temp));
