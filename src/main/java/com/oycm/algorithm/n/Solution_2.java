@@ -21,12 +21,13 @@ public class Solution_2 {
      */
     public List<List<Integer>> subsets(int[] nums) {
         this.nums = nums;
-        this.temp = new ArrayList<>();
         dfs(0);
         return ans;
     }
 
     List<List<Integer>> ans = new ArrayList<>();
+    int[] nums;
+    List<Integer> temp = new ArrayList<>();
     /**
      * 对于子集，就是对于nums的任意元素i，只有选与不选这两种情况
      * @param nums
@@ -52,8 +53,7 @@ public class Solution_2 {
         temp.remove(temp.size()-1);
     }
 
-    int[] nums;
-    List<Integer> temp;
+
     private void dfs(int i) {
         if (i == nums.length) {
             ans.add(new ArrayList<>(temp));
@@ -68,7 +68,6 @@ public class Solution_2 {
     }
 
     private List<List<Integer>> method_2(int[] nums) {
-        this.temp = new ArrayList<>();
         this.nums = nums;
         ans.add(new ArrayList<>(temp));
 
@@ -79,6 +78,23 @@ public class Solution_2 {
         }
 
         return ans;
+    }
+
+    private List<List<Integer>> method_2_1(int[] nums) {
+        this.nums = nums;
+        dfs_2(0);
+        return ans;
+    }
+
+    private void dfs_2(int i) {
+        ans.add(new ArrayList<>(temp));
+        if (i == nums.length) return;
+        for (int j = i; j < nums.length; j++) {
+            temp.add(nums[j]);
+            dfs_2(j+1);
+            // 恢复
+            temp.remove(temp.size()-1);
+        }
     }
 
 
