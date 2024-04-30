@@ -103,6 +103,27 @@ public class Solution_2 {
     }
 
 
-
+    /**
+     * 对于nums长度的子集，可以用二进制的0/1来表示子集是否被选用。例如{1, 2}
+     * 00 {}，01 {2}，10{1}，11{1,2} 刚好2^2中0/1的关系表四了子集的清空
+     * 缺点，内存占用高于前面两种算法
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> method_3(int[] nums) {
+        int n = nums.length;
+        List<Integer> path = new ArrayList<>();
+        for (int i = 0; i < (1<<n); i++) {
+            path.clear();
+            // 遍历找出是i对应二进制值是1的下标
+            for (int j = 0; j < n; j++) {
+                if ((i & (1<<j)) != 0) {
+                    path.add(nums[j]);
+                }
+            }
+            ans.add(new ArrayList<>(path));
+        }
+        return ans;
+    }
 
 }
