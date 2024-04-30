@@ -8,7 +8,7 @@ public class Solution_2 {
     public static void main(String[] args) {
         Solution_2 solution = new Solution_2();
         int[] nums = {1, 2, 3};
-        List<List<Integer>> ans = solution.subsets(nums);
+        List<List<Integer>> ans = solution.method_2(nums);
         System.out.println(ans.size());
         System.out.println(ans);
     }
@@ -66,4 +66,22 @@ public class Solution_2 {
         dfs(i+1);
         temp.remove(temp.size()-1);
     }
+
+    private List<List<Integer>> method_2(int[] nums) {
+        this.temp = new ArrayList<>();
+        this.nums = nums;
+        ans.add(new ArrayList<>(temp));
+
+        for (int i = 0; i < nums.length; i++) {
+            temp.add(nums[i]);
+            dfs(i+1);
+            temp.clear();
+        }
+
+        return ans;
+    }
+
+
+
+
 }
