@@ -415,6 +415,12 @@ public int searchBound(int[] nums, int target) {
 
 ## n.回溯-子集型
 
+回溯三问：
+
+1. 当前操作？每一步的操作是什么？
+2. 子问题？
+3. 下一个子问题？
+
 ### 17
 
 17.电话号码的字母组合：https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
