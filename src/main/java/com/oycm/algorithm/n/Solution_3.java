@@ -93,4 +93,25 @@ public class Solution_3 {
         }
     }
 
+    private boolean isPalindrome(String s, int left, int right) {
+        while (left < right) {
+            if (s.charAt(left++) != s.charAt(right--)) return false;
+        }
+        return true;
+    }
+
+    private void dfs_2_1(String s, int i, List<List<String>> ans, List<String> path) {
+        if (i == s.length()) {
+            ans.add(new ArrayList<>(path));
+            return;
+        }
+        for (int j = i; j < s.length(); j++) {
+            if (isPalindrome(s, i, j)) {
+                path.add(s.substring(i, j+1));
+                dfs_2_1(s,j+1, ans, path);
+                path.remove(path.size()-1);
+            }
+        }
+    }
+
 }
