@@ -26,8 +26,8 @@ public class Solution_1 {
     private static final char[][] MAPPING = {{}, {}, {'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'}, {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}};
 
     /**
-     * 原问题：根据给定的字符串数组情况，返回其对应下字符组合对应长度的字符串
-     * 子问题：
+     * 原问题：根据给定的字符串数组情况，返回其对应下字符组合对应长度的字符串，构建n长度的字符串
+     * 子问题：构建n-1长度的字符串
      * @param digits [2-9]之间数组组合的字符串，与电话按键相同的字符组合长度，对应数组下的字母组合情况
      * @return
      */
@@ -50,5 +50,27 @@ public class Solution_1 {
             dfs(digits, i+1, result);
         }
 
+    }
+
+    private static final String[] STR_MAP = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+    public List<String> method_2(String digits) {
+        if (digits.length() == 0) return ans;
+        dfs(digits, 0, new StringBuilder());
+        return ans;
+    }
+
+    private void dfs(String digits, int i, StringBuilder str) {
+        if (i == digits.length()) {
+            ans.add(str.toString());
+            return;
+        }
+        String temp = STR_MAP[digits.charAt(i) - '0'];
+        for (char c : temp.toCharArray()) {
+            str.append(c);
+            dfs(digits, i+1, str);
+            // 删除返回的结果
+            str.deleteCharAt(i);
+        }
     }
 }

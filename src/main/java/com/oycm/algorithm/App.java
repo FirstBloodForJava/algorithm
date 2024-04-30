@@ -16,5 +16,9 @@ public class App {
 //        });
         System.out.println(1 << 32);
         System.out.println(1 | 1);
+
+        StringBuilder builder = new StringBuilder("123");
+        builder.deleteCharAt(2);
+        System.out.println(builder);
     }
 }
