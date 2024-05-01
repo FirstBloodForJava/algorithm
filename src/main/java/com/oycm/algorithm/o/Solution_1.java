@@ -41,4 +41,29 @@ public class Solution_1 {
         dfs_1(i-1);
         path.remove(path.size()-1);
     }
+
+    private List<List<Integer>> method_2(int n, int k) {
+        this.k = k;
+        dfs_2(n);
+        return ans;
+    }
+
+    private void dfs_2(int i) {
+        // 还需要选d个数
+        int d = k - path.size();
+        if (d == 0) {
+            ans.add(new ArrayList<>(path));
+            return;
+        }
+        for (int j = i; j >= d ; j--) {
+            path.add(j);
+            dfs_2(j-1);
+            path.remove(path.size()-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution_1 solution = new Solution_1();
+        System.out.println(solution.method_2(4,2));
+    }
 }
