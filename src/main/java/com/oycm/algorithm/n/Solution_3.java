@@ -35,14 +35,17 @@ public class Solution_3 {
         return ans;
     }
 
+    // start 表示这段回文字串的开始位置
     private void dfs_1(int i, int start) {
         if (i == s.length()) {
             ans.add(new ArrayList<>(path));
             return;
         }
 
+        // 不选i和i+1之间的,i=n-1时必选，把i当作字串的右端点范围是[0,n-1]
         if (i < s.length()-1) dfs_1(i+1, start);
 
+        // 选i和i+1之间的, 把s[i]作为字串的最后一个字符
         if (isPalindrome(start, i)) {
             path.add(s.substring(start, i+1));
             dfs_1(i+1, i+1);
