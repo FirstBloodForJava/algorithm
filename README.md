@@ -427,11 +427,99 @@ public int searchBound(int[] nums, int target) {
 
 ![image-20240428223923028](http://47.101.155.205/image-20240428223923028.png)
 
+![image-20240501160650151](http://47.101.155.205/image-20240501160650151.png)
+
+1. 当前操作？枚举当前i需要填入的字母，path[i]=[a,b,c]
+2. 子问题？构造字符串>=i的部分
+3. 下一个子问题？构造字符串>=i+1的部分
+
+~~~java
+// 核心代码
+int n;// length
+int s;
+List<String> ans = new ArrayList<>();
+char[] path = new char[n];
+private void dfs(int i) {
+    if(i == n) {
+        ans.add(new String(path));
+        return;
+    }
+    // get方法根据数组获得对于的字母
+    for(char c : get(s.chatAt(i))) {
+        path[i] = c;
+        dfs(i+1);
+    }
+}
+
+~~~
+
+
+
 ### 78
 
 78.子集：https://leetcode.cn/problems/subsets/
 
 ![image-20240428224017653](http://47.101.155.205/image-20240428224017653.png)
+
+#### 方式一：选/不选
+
+![image-20240501162716709](http://47.101.155.205/image-20240501162716709.png)
+
+1. 当前操作？枚举nums[i]，选/不选
+2. 子问题？从下标>=i中构造子集
+3. 下一个子问题？从下标>=i+1中构造子集
+
+~~~java
+// 核心代码
+private void dfs(int i, int n, int[] nums, List<Integer> path, List<List<Integer>> ans) {
+    if(i == n) {
+        ans.add(new ArrayList<>(path));
+        return;
+    }
+    // 不选
+    dfs(i+1, n, nums, path, ans);
+    // 选
+    path.add(nums[i]);
+    dfs(i+1, n, nums, path, ans);
+    
+    // 恢复，递归往回走的时候要将添加的元素移除
+    path.remove(path.size()-1);
+}
+
+~~~
+
+
+
+#### 方式二：答案
+
+![image-20240501163855856](http://47.101.155.205/image-20240501163855856.png)
+
+1. 当前操作？枚举一个下标j>=i的加入path
+2. 子问题？从下标>=j的数字中构造子集
+3. 下一个子问题？从下标>=j+1的数字中构造子集
+
+~~~java
+// 核心代码
+private void dfs(int i, int n, int[] nums, List<Integer> path, List<List<Integer>> ans) {
+    // 先记录答案，每个节点都是结果
+    ans.add(new ArrayList<>(path));
+    if(i == n) {
+        return;
+    }
+    for(int j = i; j < n, j++) {
+        // 选
+        path.add(nums[j]);
+    	dfs(j+1, n, nums, path, ans);
+        // 恢复，递归往回走的时候要将添加的元素移除
+        path.remove(path.size()-1);
+    }
+}
+
+~~~
+
+
+
+
 
 ### 131
 
