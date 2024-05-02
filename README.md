@@ -625,6 +625,9 @@ private void dfs(int i, int start) {
 
 ![image-20240428224614260](http://47.101.155.205/image-20240428224614260.png)
 
+![image-20240502212018400](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240502212018400.png)
+
+
 
 ## p.回溯-排列型
 
@@ -633,6 +636,10 @@ private void dfs(int i, int start) {
 46.全排列：https://leetcode.cn/problems/permutations/
 
 ![image-20240428224921886](http://47.101.155.205/image-20240428224921886.png)
+
+![image-20240502220623014](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240502220623014.png)
+
+
 
 ### 51
 
