@@ -494,6 +494,18 @@ private void dfs(int i, int n, int[] nums, List<Integer> path, List<List<Integer
 
 ![image-20240501163855856](http://47.101.155.205/image-20240501163855856.png)
 
+[1,2,3]
+
+第一层[]
+
+第二层[1]；[2]；[3]
+
+第三层[1,2]，[1,3]；[2,3]；
+
+第四层[1,2,3]
+
+
+
 1. 当前操作？枚举一个下标j>=i的加入path
 2. 子问题？从下标>=j的数字中构造子集
 3. 下一个子问题？从下标>=j+1的数字中构造子集
@@ -526,6 +538,70 @@ private void dfs(int i, int n, int[] nums, List<Integer> path, List<List<Integer
 131.分割回文串：https://leetcode.cn/problems/palindrome-partitioning/
 
 ![image-20240428224132171](http://47.101.155.205/image-20240428224132171.png)
+
+#### 方式一：答案
+
+![image-20240502123400590](http://47.101.155.205/image-20240502123400590.png)
+
+1. 当前操作？选择回文字串s[i,j]，加入path
+2. 子问题？从下标>=i(j)的后缀中构造回文分割字串
+3. 下一个子问题？从下标>=j+1的后缀中构造回文分割
+
+~~~java
+// 核心代码
+private void dfs(int i, String s, List<String> path, List<List<String>> ans) {
+    if (i == s.length()) {
+        ans.add(new ArrayList<>(path));
+        return;
+    }
+    for(int j = i; j < s.length(); j++) {
+        // 判断字串是否回文
+        if(isPalindrome(i, j)) {
+            path.add(s.substring(i, j+1));
+            dfs(j+1, s, path, ans);
+            path.remove(path.size()-1);
+        }
+    }
+}
+
+~~~
+
+
+
+#### 方式二：选/不选
+
+![image-20240502190140372](http://47.101.155.205/image-20240502190140372.png)
+
+1. 当前操作？对s[start,i]不选/选(为回文串选或i=n-1回文串时选)
+2. 子问题？从start到i中构造回文串
+3. 下一个子问题？从>=i+1再构造回文串
+
+~~~java
+// 核心代码
+private void dfs(int i, int start) {
+    if(i == n) {
+        // 记录答案,退出循环
+        ans.add(new ArrayList<>(path));
+        return;
+    }
+    if(i < n-1) {
+        // 不选
+        dfs(i+1, start);
+    }
+    // 是回文串选
+    if(check(start, i)) {
+        // 记录答案
+        path.add(s.substring(i, j+1));
+        dfs(i+1, i+1);
+        // 恢复现场
+        path.remove(path.size()-1);
+    }
+    
+}
+
+~~~
+
+
 
 
 

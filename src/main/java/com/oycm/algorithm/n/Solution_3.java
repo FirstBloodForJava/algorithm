@@ -117,4 +117,10 @@ public class Solution_3 {
         }
     }
 
+    public static void main(String[] args) {
+        Solution_3 solution = new Solution_3();
+        //System.out.println(solution.method_2("aab"));
+        System.out.println(solution.method_1("aab"));
+
+    }
 }
