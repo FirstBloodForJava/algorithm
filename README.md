@@ -637,6 +637,12 @@ private void dfs(int i, int start) {
 
 ![image-20240428224921886](http://47.101.155.205/image-20240428224921886.png)
 
+chose中记录未选的数字
+
+1. 当前操作？从chose枚举path中要填的数字x
+2. 子问题？构造排列>=i的部分，剩余未选的数字集合中chose
+3. 下一个子问题？构造排列>=i+1的部分，剩余未选的数字集合chose-x
+
 ![image-20240502220623014](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240502220623014.png)
 
 
