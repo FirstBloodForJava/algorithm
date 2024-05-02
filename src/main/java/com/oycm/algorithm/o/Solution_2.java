@@ -52,4 +52,41 @@ public class Solution_2 {
             path_1.remove(path_1.size()-1);
         }
     }
+
+    List<List<Integer>> ans_2 = new ArrayList<>();
+    List<Integer> path_2 = new ArrayList<>();
+    int k2;
+
+    /**
+     * 选/不选
+     * @param k
+     * @param n
+     */
+    private List<List<Integer>> method_2(int k, int n) {
+        this.k2 = k;
+        dfs_2(9, n);
+        return ans_2;
+    }
+
+    private void dfs_2(int i, int t) {
+        int d = k2 - path_2.size();
+
+        if (t < 0 || t > (i*d + (1-d)*d/2)) {
+            return;
+        }
+
+        if (d == 0) {
+            ans_2.add(new ArrayList<>(path_2));
+            return;
+        }
+
+        // 不选
+        if (d < i) {
+            dfs_2(i-1, t);
+        }
+        // 选
+        path_2.add(i);
+        dfs_2(i-1, t-i);
+        path_2.remove(path_2.size()-1);
+    }
 }
