@@ -625,7 +625,7 @@ private void dfs(int i, int start) {
 
 ![image-20240428224614260](http://47.101.155.205/image-20240428224614260.png)
 
-![image-20240502212018400](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240502212018400.png)
+![image-20240502212018400](http://47.101.155.205/image-20240502212018400.png)
 
 
 
@@ -643,7 +643,7 @@ chose中记录未选的数字
 2. 子问题？构造排列>=i的部分，剩余未选的数字集合中chose
 3. 下一个子问题？构造排列>=i+1的部分，剩余未选的数字集合chose-x
 
-![image-20240502220623014](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240502220623014.png)
+![image-20240502220623014](http://47.101.155.205/image-20240502220623014.png)
 
 
 
@@ -652,3 +652,5 @@ chose中记录未选的数字
 51.N皇后：https://leetcode.cn/problems/n-queens/
 
 ![image-20240428225020151](http://47.101.155.205/image-20240428225020151.png)
+
+![image-20240503090622772](http://47.101.155.205/image-20240503090622772.png)
