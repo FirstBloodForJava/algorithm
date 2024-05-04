@@ -3,7 +3,7 @@ package com.oycm.algorithm.s;
 public class Solution_1 {
 
     /**
-     * 1143
+     * 1143.最长公共子序列
      * https://leetcode.cn/problems/longest-common-subsequence/
      * @param text1
      * @param text2

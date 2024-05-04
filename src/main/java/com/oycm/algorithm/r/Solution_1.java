@@ -3,7 +3,7 @@ package com.oycm.algorithm.r;
 public class Solution_1 {
 
     /**
-     * 494
+     * 494.目标和
      * https://leetcode.cn/problems/target-sum/
      * @param nums
      * @param target

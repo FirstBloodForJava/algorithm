@@ -4,7 +4,7 @@ public class Solution_1 {
 
 
     /**
-     * 300
+     * 300.最长递增子序列
      * https://leetcode.cn/problems/longest-increasing-subsequence/
      * @param nums
      * @return

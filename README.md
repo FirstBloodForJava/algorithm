@@ -671,11 +671,15 @@ chose中记录未选的数字
 
 ### 494
 
+494.目标和：https://leetcode.cn/problems/target-sum/
+
 ![image-20240504160655803](http://47.101.155.205/image-20240504160655803.png)
 
 
 
 ### 322
+
+322.零钱兑换：https://leetcode.cn/problems/coin-change/
 
 ![image-20240504160715040](http://47.101.155.205/image-20240504160715040.png)
 
@@ -685,11 +689,15 @@ chose中记录未选的数字
 
 ### 1143
 
+1143.最长公共子序列：https://leetcode.cn/problems/longest-common-subsequence/
+
 ![image-20240504161203281](http://47.101.155.205/image-20240504161203281.png)
 
 
 
 ### 72
+
+72.编辑距离：https://leetcode.cn/problems/edit-distance/
 
 ![image-20240504161351555](http://47.101.155.205/image-20240504161351555.png)
 
@@ -698,6 +706,8 @@ chose中记录未选的数字
 ## t.线性DP-2
 
 ### 300
+
+300.最长递增子序列：https://leetcode.cn/problems/longest-increasing-subsequence/
 
 ![image-20240504160918674](http://47.101.155.205/image-20240504160918674.png)
 
