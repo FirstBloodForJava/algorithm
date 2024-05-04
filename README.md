@@ -654,3 +654,160 @@ chose中记录未选的数字
 ![image-20240428225020151](http://47.101.155.205/image-20240428225020151.png)
 
 ![image-20240503090622772](http://47.101.155.205/image-20240503090622772.png)
+
+
+
+## q.动态规划
+
+### 198
+
+198.打家劫舍：https://leetcode.cn/problems/house-robber/description/
+
+![image-20240504160221885](http://47.101.155.205/image-20240504160221885.png)
+
+
+
+## r.0-1背包
+
+### 494
+
+![image-20240504160655803](http://47.101.155.205/image-20240504160655803.png)
+
+
+
+### 322
+
+![image-20240504160715040](http://47.101.155.205/image-20240504160715040.png)
+
+
+
+## s.线性DP-1
+
+### 1143
+
+![image-20240504161203281](http://47.101.155.205/image-20240504161203281.png)
+
+
+
+### 72
+
+![image-20240504161351555](http://47.101.155.205/image-20240504161351555.png)
+
+
+
+## t.线性DP-2
+
+### 300
+
+![image-20240504160918674](http://47.101.155.205/image-20240504160918674.png)
+
+
+
+## u.状态机DP
+
+### 122
+
+122.买卖股票的最佳时机 II：https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/
+
+![image-20240504162121302](http://47.101.155.205/image-20240504162121302.png)
+
+### 309
+
+309.买卖股票的最佳时机含冷冻期：https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+
+![image-20240504162220523](http://47.101.155.205/image-20240504162220523.png)
+
+
+
+## v.区间DP
+
+### 516
+
+516.最长回文子序列：https://leetcode.cn/problems/longest-palindromic-subsequence/
+
+![image-20240504162423444](http://47.101.155.205/image-20240504162423444.png)
+
+### 1039
+
+1039.多边形三角剖分的最低得分：https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/
+
+![image-20240504162602807](http://47.101.155.205/image-20240504162602807.png)
+
+![image-20240504162614881](http://47.101.155.205/image-20240504162614881.png)
+
+## w.树形DP-1
+
+### 543
+
+543.二叉树的直径：https://leetcode.cn/problems/diameter-of-binary-tree/
+
+![image-20240504163008553](http://47.101.155.205/image-20240504163008553.png)
+
+
+### 124
+
+124.二叉树中的最大路径和：https://leetcode.cn/problems/binary-tree-maximum-path-sum/
+
+![image-20240504163158672](http://47.101.155.205/image-20240504163158672.png)
+
+![image-20240504163224064](http://47.101.155.205/image-20240504163224064.png)
+
+### 2246
+
+2246.相邻字符不同的最长路径：https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/
+
+![image-20240504163340805](http://47.101.155.205/image-20240504163340805.png)
+
+![image-20240504163401451](http://47.101.155.205/image-20240504163401451.png)
+
+
+
+## x.树形DP-2
+
+### 337
+
+337.打家劫舍 III：https://leetcode.cn/problems/house-robber-iii/
+
+![image-20240504163613786](http://47.101.155.205/image-20240504163613786.png)
+
+![image-20240504163631005](http://47.101.155.205/image-20240504163631005.png)
+
+
+
+## y.树形DP-3
+
+### 968
+
+968.监控二叉树：https://leetcode.cn/problems/binary-tree-cameras/
+
+![image-20240504163805856](http://47.101.155.205/image-20240504163805856.png)
+
+![image-20240504163834503](http://47.101.155.205/image-20240504163834503.png)
+
+
+
+## z.单调栈
+
+### 739
+
+739.每日温度：https://leetcode.cn/problems/daily-temperatures/
+
+![image-20240504164016398](http://47.101.155.205/image-20240504164016398.png)
+
+
+
+### 42
+
+42.接雨水：https://leetcode.cn/problems/trapping-rain-water/
+
+![image-20240504164139885](http://47.101.155.205/image-20240504164139885.png)
+
+
+
+## za.单调队列
+
+### 239
+
+239.滑动窗口最大值：https://leetcode.cn/problems/sliding-window-maximum/description/
+
+![image-20240504164547773](http://47.101.155.205/image-20240504164547773.png)
