@@ -72,6 +72,10 @@ public class Solution_1 {
      * 所以问题转换成了：求选的正数和为p的组合数(方案数量)
      * 也可以理解为背包问题: 从[0-n]的物品中，物品价值为nums[i]选出物品价值总和等于target的组合数
      * 定义一个二维数组dp[i][j] i表示从[0-i]选任意数,使得和为j的对应的组合数
+     * 当没有任何元素可以选取时，元素和只能是0，对应的方案数是1,这是为什么?也就是说p为0,不选任何数，都选负数，这个时候有一种方案
+     * dp[0][0]=1 dp[0][j]=0(j>0)
+     * 时间复杂度: O(n*(target+sum))
+     * 空间复杂度: O(n*(target+sum))
      * @param nums 正数数组
      * @param target 目标和
      * @return 为目标和的所有组合数
@@ -84,9 +88,21 @@ public class Solution_1 {
             return 0;
         }
         target /= 2;
+        int n = nums.length;
+        int[][] dp = new int[n+1][target+1];
+        //
+        dp[0][0] = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= target; j++) {
+                if (nums[i] > j) {
+                    dp[i+1][j] = dp[i][j];
+                }else {
+                    dp[i+1][j] = dp[i][j] + dp[i][j-nums[i]];
+                }
+            }
+        }
 
-
-        return 1;
+        return dp[n][target];
     }
 
     public static void main(String[] args) {
