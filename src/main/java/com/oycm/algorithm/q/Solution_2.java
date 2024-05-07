@@ -69,12 +69,40 @@ public class Solution_2 {
         return dp[i][c];
     }
 
+    /**
+     * 动态规划：定义一个二维数组，dp[i][j]，含义是从下标[0-i]中任意选取物品，放入容量为j的背包中，价值总和最大值
+     * 动态规划方程：dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]] + value[i])
+     * 时间复杂度nxc,n表示物品的个数，c表示背包的容量
+     * 空间复杂度nxc
+     * @return
+     */
+    public int method_3(int[] weight, int[] value, int c) {
+        int[][] dp = new int[weight.length][c+1];
+        // 初始化dp[0][j]的容量
+        for (int j = weight[0]; j <= c; j++){
+            dp[0][j] = value[0];
+        }
+        for (int i = 1; i < weight.length; i++) {
+            for (int j = 0; j <= c; j++) {
+                if (j < weight[i]) {
+                    // 容量不够，上一层对应容量即这一层对应最大容量
+                    dp[i][j] = dp[i-1][j];
+                }else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i]);
+                }
+            }
+        }
+
+        return dp[weight.length-1][c];
+    }
+
     public static void main(String[] args) {
         int[] weight = {1, 2, 3};
         int[] value = {6, 10, 12};
         Solution_2 solution = new Solution_2();
         System.out.println(solution.method_1(weight, value, 5));
         System.out.println(solution.method_2(weight, value, 5));
+        System.out.println(solution.method_3(weight, value, 5));
 
         System.out.println(solution.i1);
         System.out.println(solution.i2);
