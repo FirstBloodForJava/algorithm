@@ -105,6 +105,57 @@ public class Solution_1 {
         return dp[n][target];
     }
 
+    /**
+     * 空间优化-1
+     */
+    public int method_3(int[] nums, int target) {
+        for (int i : nums) {
+            target += i;
+        }
+        if (target < 0 || target % 2 != 0) {
+            return 0;
+        }
+        target /= 2;
+        int n = nums.length;
+        int[][] dp = new int[2][target+1];
+        //
+        dp[0][0] = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= target; j++) {
+                if (nums[i] > j) {
+                    dp[(i+1)%2][j] = dp[i%2][j];
+                }else {
+                    dp[(i+1)%2][j] = dp[i%2][j] + dp[i%2][j-nums[i]];
+                }
+            }
+        }
+
+        return dp[n%2][target];
+    }
+
+    public int method_4(int[] nums, int target) {
+        for (int i : nums) {
+            target += i;
+        }
+        if (target < 0 || target % 2 != 0) {
+            return 0;
+        }
+        target /= 2;
+        int n = nums.length;
+        int[] dp = new int[target+1];
+        //
+        dp[0] = 1;
+        // 从大到小遍历，避免被覆盖
+        for (int i = 0; i < n; i++) {
+            for (int j = target; j >= 0; j--) {
+                if (nums[i] <= j) {
+                    dp[j] = dp[j] + dp[j-nums[i]];
+                }
+            }
+        }
+        return dp[target];
+    }
+
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         int[] nums = {1, 1, 1, 1, 1};
