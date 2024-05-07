@@ -671,6 +671,84 @@ chose中记录未选的数字
 
 ### 0-1背包动态规划方程推导
 
+~~~java
+return dfs(weight, value, weight.length-1, c);
+// 回溯
+private int dfs(int[] weight, int[] value, int i, int c) {
+    if (i < 0 || c == 0) {
+        return 0;
+    }
+    if (c < weight[i]) {
+        // 容量不够
+        return dfs(weight, value, i-1, c);
+    }
+    return Math.max(dfs(weight, value, i-1, c), dfs(weight, value, i-1, c-weight[i])+value[i]);
+
+}
+
+// 回溯+记忆集搜索
+int[][] dp = new int[weight.length][c+1];
+// dp[i][j]可以解释为从[0-i]选任意个物品，在对应背包容量为j的情况下的最大价值
+for (int[] ints : dp) {
+	Arrays.fill(ints, -1);
+}
+private int dfs(int[] weight, int[] value, int i, int c, int[][] dp) {
+    if (i < 0 || c == 0) return 0;
+    if(dp[i][c] != -1) {
+        return dp[i][c];
+    }
+    if(c < weight[i]) {
+        dp[i][c] = dfs(weight, value, i-1, c, dp);
+    }else {
+        dp[i][c] = Math.max(dfs(weight, value, i-1, c, dp), dfs(weight, value, i-1, c-weight[i], dp)+value[i]);
+    }
+    return dp[i][c];
+}
+
+dp[i][j]当i=weight.length-1,j=c时,即从0-n中选出任意个物品，在背包容量为c的时最大价值;
+对于dp[0][j],可以有:
+for(int j = weight[0]; j <= c; j++){ dp[0][j] = value[0]}当weight[0] > c时这一排的最大价值都是0,当weight[0]<c时,[weight[0],c]的最大价值就是value[0];
+当i=1时，对应dp[1][j]可以用这个表达式计算:
+dp[1][j] = max(dp[0][j], dp[0][j-weight[1]]+value[1]);其实这个表达式也就是动态规划方程
+dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i]);
+// 代码实现
+private int method_3(int[] weight, int[] value, int c){
+    int[][] dp = new int[weight.lenght][c+1];
+    for(int j = weight[0]; j <= c; j++) {
+        dp[0][j] = value[0];
+    }
+    for(int i = 1; i < weight.length; i++) {
+        for(int j = 0; j <= c; j++) {
+            if(weight[i] > c) {
+                dp[i][j] = dp[i-1][j];
+            }else {
+                dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i]);
+            }
+        }
+    }
+    return dp[weight.length-1][c];
+}
+
+// 滚动数组优化时间复杂度，由于上一层的结果会复制到下一层来，可以使用滚动数组来实现
+private int method_4(int[] weight, int[] value, int c) {
+    int[] dp = new int[c+1];
+    for(int j = weight[0]; j <= c; j++) {
+        dp[j] = value[0];
+    }
+    for(int i = 1; i < weight.length; i++) {
+        // 这里需要从大到小遍历，因为dp[i-1]在前面被修改之后，可能会被dp[i]使用到
+        // 
+        for(int j = c; j > 0; j--) {
+            if(weight[i] <= c) {
+                dp[j] = Math.max(dp[j], dp[j-weight[i]]+value[i]);
+            }
+        }
+    }
+    return dp[c];
+}
+
+~~~
+
 
 
 
