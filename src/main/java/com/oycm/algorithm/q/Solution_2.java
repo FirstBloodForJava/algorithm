@@ -52,6 +52,7 @@ public class Solution_2 {
     }
     int i1 = 0;
     int i2 = 0;
+    int i3 = 0;
 
     private int dfs_2(int[] weight, int[] value ,int i, int c, int[][] dp) {
         if (i < 0 || c == 0) return 0;
@@ -83,6 +84,7 @@ public class Solution_2 {
             dp[0][j] = value[0];
         }
         for (int i = 1; i < weight.length; i++) {
+            // 这里不能优化成int j = c; c >= weight[i]; j--因为当weight[i] > j时，会出现一层的值为0的情况
             for (int j = 0; j <= c; j++) {
                 if (j < weight[i]) {
                     // 容量不够，上一层对应容量即这一层对应最大容量
@@ -92,20 +94,46 @@ public class Solution_2 {
                 }
             }
         }
+        for (int[] ints : dp) {
+            System.out.println(Arrays.stream(ints).mapToObj(i -> String.format("%2d", i)).collect(Collectors.joining(", ")));
+        }
 
         return dp[weight.length-1][c];
     }
 
-    public static void main(String[] args) {
-        int[] weight = {1, 2, 3};
-        int[] value = {6, 10, 12};
-        Solution_2 solution = new Solution_2();
-        System.out.println(solution.method_1(weight, value, 5));
-        System.out.println(solution.method_2(weight, value, 5));
-        System.out.println(solution.method_3(weight, value, 5));
+    public int method_4(int[] weight, int[] value, int c) {
 
-        System.out.println(solution.i1);
-        System.out.println(solution.i2);
+        int[] dp = new int[c+1];
+        // 初始化第一层的容量背包的价值最大值
+        for (int j = weight[0]; j <= c; j++) {
+            dp[j] = value[0];
+        }
+        for (int i = 1; i < weight.length; i++) {
+            for (int j = c; j >= 1 ; j--) {
+                if (j >= weight[i]) {
+                    // 这样之间把上面修改，之后立马使用，导致多算，例如：
+                    // 旧的dp[1] 为 6，新增dp[1]被修改成7，然后dp[2]又用到了dp[1]导致多算了
+                    // 这里需要从后面开始遍历
+                    dp[j] = Math.max(dp[j], dp[j-weight[i]]+value[i]);
+                }
+            }
+        }
+
+        return dp[c];
+    }
+
+    public static void main(String[] args) {
+        int[] weight = {1, 2, 10, 1};
+        int[] value = {99, 10, 12, 10};
+        Solution_2 solution = new Solution_2();
+        System.out.println("m1 result: " + solution.method_1(weight, value, 5));
+        System.out.println("m2 result: " + solution.method_2(weight, value, 5));
+        System.out.println("m3 result: " + solution.method_3(weight, value, 5));
+        System.out.println("m4 result: " + solution.method_4(weight, value, 5));
+
+        System.out.println("m1: " + solution.i1);
+        System.out.println("m2: " + solution.i2);
+        System.out.println("m3: " + solution.i3);
     }
 
 }
