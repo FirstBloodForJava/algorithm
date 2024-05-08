@@ -1,5 +1,8 @@
 package com.oycm.algorithm.r;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class Solution_1 {
 
     /**
@@ -101,7 +104,9 @@ public class Solution_1 {
                 }
             }
         }
-
+        for (int[] ints : dp) {
+            System.out.println(Arrays.stream(ints).mapToObj(i -> String.format("%2d", i)).collect(Collectors.joining(", ")));
+        }
         return dp[n][target];
     }
 
@@ -159,6 +164,17 @@ public class Solution_1 {
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         int[] nums = {1, 1, 1, 1, 1};
-        System.out.println(solution.method_1(nums,3));
+        /**
+         *  dp[i][j] 从[0-1]选任意数，使得和为j的方案数dp[0][0]=1;dp[0][j>0]=0
+         *  dp[i+1][j] = dp[i][j] + dp[i][j-nums[i]],从[0-i+1]中对应j可选的方案数为从[0-i][j]的方案数+[0-j][j-nums[i]]且j>=nums[i]
+         *  0   1   2   3   4
+         *  1,  0,  0,  0,  0
+         *  1,  1,  0,  0,  0
+         *  1,  2,  1,  0,  0
+         *  1,  3,  3,  1,  0
+         *  1,  4,  6,  4,  1
+         *  1,  5, 10, 10,  5
+         */
+        System.out.println(solution.method_2(nums,3));
     }
 }
