@@ -671,6 +671,8 @@ chose中记录未选的数字
 
 ### 0-1背包动态规划方程推导
 
+**递归的初始值就是递归的边界条件**
+
 ~~~java
 return dfs(weight, value, weight.length-1, c);
 // 回溯
@@ -750,6 +752,63 @@ private int method_4(int[] weight, int[] value, int c) {
 ~~~
 
 
+
+### 完全背包动态规划方程推导
+
+**递归的初始值就是递归的边界条件**
+
+~~~java
+public int method_1(int[] weight, int[] value, int target) {
+	return dfs_1(weight, value, target, weight.length-1);
+}
+
+private int dfs_1(int[] weight, int[] value, int target, int i) {
+	if (i < 0 || target <= 0) return 0;
+    if (weight[i] > target) {
+        return dfs_1(weight, value, target, i-1);
+    }else {
+        return Math.max(dfs_1(weight, value, target, i-1), dfs_1(weight, value, target-weight[i], i)+value[i]);
+    }
+
+}
+
+// 递推实现
+private int method_2(int[] weight, int[] value, int target) {
+    int n = weight.length;
+    int[][] dp = new int[n][target+1];
+    for(int j = weight[0]; j <= target; j++) {
+        dp[0][j] = dp[0][j-weight[0]] + value[i];
+    }
+    for(int i = 1; i < n; i++) {
+        for(int j = 0; j <= target; j++) {
+            if (weight[i] > j) {
+                dp[i][j] = dp[i-1][j];
+            }else {
+                dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i]] + value[i])
+            }
+        }
+    }
+    return dp[n-1][target];
+}
+
+public int method_4(int[] weight, int[] value, int target) {
+
+	int n = weight.length;
+	int[] dp = new int[target+1];
+	for (int j = weight[0]; j <= target; j++) {
+    	dp[j] = dp[j-weight[0]] + value[0];
+    }
+    for (int i = 1; i < n; i++) {
+        // 注意这里与0-1背包不同，这里是从头开始遍历
+        for (int j = weight[i]; j <= target; j++) {
+            // 解决多选的问题
+            dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+        }
+    }
+	return dp[target];
+}
+
+~~~
 
 
 

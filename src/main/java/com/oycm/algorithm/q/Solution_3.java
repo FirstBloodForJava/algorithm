@@ -58,19 +58,14 @@ public class Solution_3 {
         int[][] dp = new int[n][target+1];
         // 初始化dp[0][j] j范围[0-target]的最大体积情况
         for (int j = weight[0]; j <= target; j++) {
-            if (j % weight[0] == 0) {
-                dp[0][j] =  dp[0][j-1] + value[0];
-            }else {
-                dp[0][j] = dp[0][j-1];
-            }
+            dp[0][j] = dp[0][j-weight[0]] + value[0];
         }
         for (int i = 1; i < n; i++) {
             for (int j = 0; j <= target; j++) {
                 if (weight[i] > j) {
                     dp[i][j] = dp[i-1][j];
                 }else {
-                    // 解决多选的问题
-                    int v = j / weight[i];
+                    // 注意: 是在当前i上面+value[i]比大小
                     dp[i][j] = Math.max(dp[i-1][j], dp[i][j-weight[i]]+value[i]);
                 }
             }
@@ -83,15 +78,13 @@ public class Solution_3 {
         int n = weight.length;
         int[] dp = new int[target+1];
         for (int j = weight[0]; j <= target; j++) {
-            int v = j / weight[0];
-            dp[j] = value[0] * v;
+            dp[j] = dp[j-weight[0]] + value[0];
         }
         for (int i = 1; i < n; i++) {
-            for (int j = target; j >= 0; j--) {
-                if (weight[i] <= j) {
-                    // 解决多选的问题
-                    dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
-                }
+            for (int j = weight[i]; j <= target; j++) {
+                // 解决多选的问题
+                dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+
             }
         }
 
