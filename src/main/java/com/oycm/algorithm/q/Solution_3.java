@@ -52,7 +52,7 @@ public class Solution_3 {
         return dp[i][target];
     }
 
-    // 递推
+    // 递推 递推公式错误 dp[i][j] = max(dp[i-1][j], dp[i][j-weight[i]]+value[i])
     public int method_3(int[] weight, int[] value, int target) {
         int n = weight.length;
         int[][] dp = new int[n][target+1];
@@ -71,7 +71,7 @@ public class Solution_3 {
                 }else {
                     // 解决多选的问题
                     int v = j / weight[i];
-                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-v*weight[i]]+v*value[i]);
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-weight[i]]+value[i]);
                 }
             }
         }
