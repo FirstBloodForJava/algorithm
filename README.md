@@ -832,6 +832,14 @@ public int method_4(int[] weight, int[] value, int target) {
 
 
 
+### 背包变形题目
+
+1. 至多装target，求方案数/最大价值和
+2. 恰好装target，求方案数(0-1背包494)/最大价值和/最小价值和(完全背包322)
+3. 至少装target，求方案数/最小价值和
+
+
+
 ## s.线性DP-1
 
 ### 1143
