@@ -6,6 +6,7 @@ public class Solution_2 {
 
     /**
      * 322.零钱兑换
+     * 等价于完全背包的容量是amount，体积的数组是coins[]数组，价值的数组是nums[]其中所有值为1，背包恰好装满的最小值，不能装满则为-1
      * https://leetcode.cn/problems/coin-change/
      * @param coins
      * @param amount
