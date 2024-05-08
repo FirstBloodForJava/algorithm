@@ -90,8 +90,7 @@ public class Solution_3 {
             for (int j = target; j >= 0; j--) {
                 if (weight[i] <= j) {
                     // 解决多选的问题
-                    int v = j / weight[i];
-                    dp[j] = Math.max(dp[j], dp[j-v*weight[i]] + v*value[i]);
+                    dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
                 }
             }
         }
