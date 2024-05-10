@@ -114,12 +114,39 @@ public class Solution_1 {
         return dp[n][m];
     }
 
+    private int method_5(String text1, String text2) {
+        int n = text1.length();
+        int m = text2.length();
+        int[] dp = new int[m+1];
+        char[] t1 = text1.toCharArray();
+        char[] t2 = text2.toCharArray();
+
+        for (int i = 1; i <= n ; i++) {
+            for (int j = 1, pre = 0; j <= m ; j++) {
+                // temp存放的是dp[i-1][j-1]的值
+                int temp = dp[j];
+                if (t1[i-1] == t2[j-1]) {
+                    dp[j] = pre + 1;
+                }else {
+                    // dp[i-1][j] = dp[j]
+                    // dp[j-1] = dp[i][j-1]
+                    dp[j] = Math.max(dp[j], dp[j-1]);
+                }
+                // 避免被覆盖
+                pre = temp;
+            }
+        }
+
+        return dp[m];
+    }
+
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         System.out.println(solution.method_1("abcba", "abcbcba"));
         System.out.println(solution.method_2("abcba", "abcbcba"));
         System.out.println(solution.method_3("abcba", "abcbcba"));
         System.out.println(solution.method_4("abcba", "abcbcba"));
+        System.out.println(solution.method_5("abcba", "abcbcba"));
 
     }
 }
