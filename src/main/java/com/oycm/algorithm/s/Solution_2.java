@@ -59,9 +59,39 @@ public class Solution_2 {
         return dp[i][j];
     }
 
+    public int method_3(String word1, String word2) {
+        int n = word1.length();
+        int m = word2.length();
+        // 一个字符串长度为0
+        if (n*m == 0) {
+            return n + m;
+        }
+        int[][] dp = new int[n+1][m+1];
+        char[] t = word1.toCharArray();
+        char[] s = word2.toCharArray();
+        for (int j = 1; j <= m ; j++) {
+            dp[0][j] = j;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            // 这里不能少，也是递归的边界条件
+            dp[i][0] = i;
+            for (int j = 1; j <= m ; j++) {
+                if (t[i-1] == s[j-1]) {
+                    dp[i][j] = dp[i-1][j-1];
+                }else {
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j-1], dp[i-1][j]), dp[i][j-1]) + 1;
+                }
+            }
+        }
+
+        return dp[n][m];
+    }
+
     public static void main(String[] args) {
         Solution_2 solution = new Solution_2();
         System.out.println(solution.method_1("intention", "execution"));
         System.out.println(solution.method_2("intention", "execution"));
+        System.out.println(solution.method_3("intention", "execution"));
     }
 }
