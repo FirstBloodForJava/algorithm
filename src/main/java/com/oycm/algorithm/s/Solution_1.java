@@ -1,5 +1,7 @@
 package com.oycm.algorithm.s;
 
+import java.util.Arrays;
+
 public class Solution_1 {
 
     /**
@@ -56,9 +58,47 @@ public class Solution_1 {
         return dp[n-1][m-1];
     }
 
+    private int method_2(String text1, String text2) {
+        return dfs_1(text1.toCharArray(), text2.toCharArray(), text1.length()-1, text2.length()-1);
+    }
+
+    private int dfs_1(char[] t, char[] s, int i, int j) {
+        if (i < 0 || j < 0) return 0;
+        if (t[i] == s[j]) {
+            return dfs_1(t, s, i-1, j-1) + 1;
+        }else {
+            return Math.max(dfs_1(t, s, i-1, j), dfs_1(t, s, i, j-1));
+        }
+    }
+
+    private int method_3(String text1, String text2) {
+        int[][] dp = new int[text1.length()][text2.length()];
+        for (int[] ints : dp) {
+            Arrays.fill(ints, -1);
+        }
+        return dfs_1(text1.toCharArray(), text2.toCharArray(), text1.length()-1, text2.length()-1, dp);
+    }
+    private int dfs_1(char[] t, char[] s, int i, int j, int[][] dp) {
+        if (i < 0 || j < 0) return 0;
+        if (dp[i][j] != -1) {
+            return dp[i][j];
+        }
+        if (t[i] == s[j]) {
+            dp[i][j] = dfs_1(t, s, i-1, j-1, dp) + 1;
+        }else {
+            dp[i][j] = Math.max(dfs_1(t, s, i-1, j, dp), dfs_1(t, s, i, j-1, dp));
+        }
+
+        return dp[i][j];
+    }
+
+
+
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         System.out.println(solution.method_1("abcba", "abcbcba"));
+        System.out.println(solution.method_2("abcba", "abcbcba"));
+        System.out.println(solution.method_3("abcba", "abcbcba"));
 
     }
 }
