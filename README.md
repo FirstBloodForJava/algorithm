@@ -850,7 +850,7 @@ public int method_4(int[] weight, int[] value, int target) {
 
 #### 回溯思考
 
-子序列的问题就是选或不选，从最后一堆字母开始，假设为x，y，有以下四种情况：
+子序列的问题就是选或不选，从最后一对字母开始，假设为x，y，有以下四种情况：
 
 1. 选x，不选y
 2. 不选x，选y
@@ -891,6 +891,25 @@ dfs(i, j) = max(dfs(i-1, j), dfs(i, j-1), dfs(i-1, j-1));
 72.编辑距离：https://leetcode.cn/problems/edit-distance/
 
 ![image-20240504161351555](http://47.101.155.205/image-20240504161351555.png)
+
+
+
+#### 回溯思考
+
+可以复用上面的dfs
+
+~~~java
+// 当t[i]=s[j]
+dfs(i, j) = dfs(i-1, j-1);
+// 当t[i]!=s[j]
+dfs(i, j) = min(dfs(i-1, j), dfs(i, j-1), dfs(i-1, j-1)) + 1;
+dfs(i-1, j) 理解为插入;
+dfs(i, j-1) 理解为删除;
+dfs(i-1, j-1) 理解为替换;
+
+~~~
+
+
 
 
 
