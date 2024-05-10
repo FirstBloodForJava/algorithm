@@ -49,7 +49,8 @@ public class Solution_1 {
                     // 不相等
                     dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
                 }else {
-                    // 注意是:dp[i-1][j-1]+1
+                    // 注意是:dp[i-1][j-1]+1, 下面可以优化成 dp[i-1][j-1]+1,为什么能优化成这样
+                    // 对于dp[i-1][j-1] 其LCS肯定是 <= dp[i-1][j] 或dp[i][j-1] 在这个二维数组里面，i-1的下面i，j-1的右边要j，对于的LCS都是>=x等于时+1这个最大，大于时也只会大1，所以不用比较
                     dp[i][j] = Math.max(dp[i-1][j-1]+1, dp[i-1][j]);
                 }
             }
@@ -92,13 +93,33 @@ public class Solution_1 {
         return dp[i][j];
     }
 
+    private int method_4(String text1, String text2) {
+        int n = text1.length();
+        int m = text2.length();
 
+        int[][] dp = new int[n+1][m+1];
+        char[] t1 = text1.toCharArray();
+        char[] t2 = text2.toCharArray();
+
+        for (int i = 1; i <= n ; i++) {
+            for (int j = 1; j <= m; j++) {
+                if (t1[i-1] == t2[j-1]) {
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                }else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+
+        return dp[n][m];
+    }
 
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         System.out.println(solution.method_1("abcba", "abcbcba"));
         System.out.println(solution.method_2("abcba", "abcbcba"));
         System.out.println(solution.method_3("abcba", "abcbcba"));
+        System.out.println(solution.method_4("abcba", "abcbcba"));
 
     }
 }
