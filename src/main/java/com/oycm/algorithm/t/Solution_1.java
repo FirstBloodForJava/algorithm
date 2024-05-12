@@ -6,7 +6,7 @@ public class Solution_1 {
 
 
     /**
-     * 300.最长递增子序列
+     * 300.最长递增子序列(LIS)
      * https://leetcode.cn/problems/longest-increasing-subsequence/
      * @param nums
      * @return
@@ -36,6 +36,7 @@ public class Solution_1 {
         return res + 1;
     }
 
+    // 动态规划的时间复杂度 === 状态个数 ×\times× 单个状态的计算时间
     private int method_2(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
@@ -74,6 +75,7 @@ public class Solution_1 {
     }
 
     // 记忆化搜索
+    // 动态规划的时间复杂度 === 状态个数 ×\times× 单个状态的计算时间
     private int method_2_1(int[] nums) {
         int[][] dp = new int[nums.length][nums.length+1];
         for (int[] ints : dp) {
@@ -100,6 +102,22 @@ public class Solution_1 {
         ++i[0];
         // return 3
         return i[0]+1;
+    }
+
+    // dp 动态规划
+    public int method_3(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    dp[i] = Math.max(dp[j], dp[i]);
+                }
+            }
+            ans = Math.max(ans, ++dp[i]);
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
