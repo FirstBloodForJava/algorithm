@@ -1,6 +1,8 @@
 package com.oycm.algorithm.t;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution_1 {
 
@@ -118,6 +120,35 @@ public class Solution_1 {
             ans = Math.max(ans, ++dp[i]);
         }
         return ans;
+    }
+
+    // 贪心
+    public int method_4(int[] nums) {
+        List<Integer> g = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            // 在g中查找第一个>=nums[i]的下标,不存在返回g.size()
+            int index = lowerBound(g, nums[i]);
+            if (index == g.size()){
+                g.add(nums[i]);
+            }else {
+                g.set(index, nums[i]);
+            }
+        }
+        return g.size();
+    }
+
+    public int lowerBound(List<Integer> list, int target) {
+        int left = -1;
+        int right = list.size();
+        while (left+1 < right) {
+            int mid = left + (right - left) / 2;
+            if (list.get(mid) < target) {
+                left = mid;
+            }else {
+                right = mid;
+            }
+        }
+        return right;
     }
 
     public static void main(String[] args) {
