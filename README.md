@@ -937,12 +937,69 @@ dfs(i-1, j-1) 理解为替换;
 
 #### 回溯思考
 
+选/不选
+
 回溯三问？
 
-1. 当前操作？nums[j]是删除/不删除(不选/选)
-2. 子问题？nums[j] 最长递增子序列
-3. 下一个子问题？nums[j-1]的最长子序列？
+1. 当前操作？枚举nums[i]，选或不选
+2. 子问题？从下标<=i中构造LIS，要知道上一个选的下标情况
+3. 下一个子问题？nums[i-1]选或不选，LIS情况
    1. 大于选+1和不选的最大值？
+   2. 小于，不选的情况
+
+在这个递归过程中需要知道上一个选择的数字下标，递归的入口要满足选/不选
+
+~~~java
+public int dfs(int i, int pre, int[] nums) {
+    if(i < 0) return 0;
+    if(i == nums.length || num[i] < num[pre]) {
+        // 选i(+1)或不选i
+        return Math.max(dfs(i-1, i, nums)+1, dfs(i-1, pre, nums));
+    }else{
+        // i不能选
+        return dfs(i-1, pre, nums);
+    }
+}
+
+~~~
+
+答案的角度
+
+回溯三问？
+
+1. 当前操作？枚举nums[j]
+2. 子问题？以nums[i]结尾的LIS长度
+3. 下一个子问题？以nums[j]结尾的LIS长度
+
+~~~java
+public int dfs(int[] nums, int i) {
+    int res = 0;
+    // i = 0循环不会执行，自动退出边界条件
+    for(int j = 0; j < i; j++) {
+        if (nums[j] < nums[i]) {
+            res = Math.max(res, dfs(nums, j));
+        }
+    }
+    return res+1;
+}
+int ans = 0;
+for(int i = 0; i < nums.length; i++) {
+    ans = Math.max(ans, dfs(nums, i));
+}
+
+~~~
+
+
+
+#### 思路转换
+
+nums的LIS(最长递增子序列)等价于对nums数组排序去重之后的nums的LCS问题。
+
+例如：[10,9,2,5,3,7,101,18]
+
+去重排序：[2,3,5,7,9,10,18,101]
+
+LCS：[2,3,7,101]
 
 
 
