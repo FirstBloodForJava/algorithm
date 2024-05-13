@@ -127,7 +127,7 @@ public class Solution_1 {
         List<Integer> g = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             // 在g中查找第一个>=nums[i]的下标,不存在返回g.size()
-            int index = lowerBound(g, nums[i]);
+            int index = searchFirstGreaterThanTarget(g, nums[i]);
             if (index == g.size()){
                 g.add(nums[i]);
             }else {
@@ -151,6 +151,26 @@ public class Solution_1 {
         return right;
     }
 
+    /**
+     * 保证中间要有一个元素(left,right]右边是可取的，表示左开右闭
+     * @param list
+     * @param target
+     * @return list中>=target的索引，不存在则return list.size()
+     */
+    public int searchFirstGreaterThanTarget(List<Integer> list, int target) {
+        int left = 0;
+        int right = list.size();
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (list.get(mid) < target) {
+                left = mid + 1;
+            }else {
+                right = mid;
+            }
+        }
+        return right;
+    }
+
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         int[] nums = {4,5,1,2,10,4,3,8,9};
@@ -158,6 +178,7 @@ public class Solution_1 {
         System.out.println(solution.method_2(nums));
         System.out.println(solution.method_1_1(nums));
         System.out.println(solution.method_2_1(nums));
+        System.out.println(solution.method_4(nums));
 
     }
 }
