@@ -32,4 +32,9 @@ public class Solution_1 {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        Solution_1 solution = new Solution_1();
+
+    }
 }
