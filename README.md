@@ -1041,6 +1041,45 @@ g = [2,3,18,101]
 
 ![image-20240504162121302](http://47.101.155.205/image-20240504162121302.png)
 
+#### 回溯思考
+
+[7, 1, 5, 3, 6, 4]这里总共是有6天，用下标i表示第i天结束时的最大收益
+
+第5天结束的最大收益是第4天结束的收益+第5天收益(卖出(前面要持有股票)/买入(前面不持有股票)/不操作(持有或不持有))；
+
+回溯三问？
+
+1. 当前操作？nums[i]当前状态(持有/不持有)的最大收益，持有(1)=max(dfs(i-1,1),dfs(i-1,0)+nums[i]);不持有(0)=max(dfs(i-1,0),dfs(i-1,1)-nums[i]);
+2. 子问题？第i天结束的收益
+3. 下一个子问题？第i-1天结束的收益
+
+递归的边界条件i<0时，或者i==0时的收益
+
+dfs(-1,0)，不持有股票的收益为0，因为没有股票可以卖出
+
+dfs(-1,1)，持有股票的收益为最小，因为不可能持有股票
+
+~~~java
+// dfs(prices, i, 0) 表示第i天结束，不持有股票的最大收益
+// dfs(prices, i, 1) 表示第i天结束，持有股票的最大收益
+public int dfs(int[] prices, int i, int flag) {
+    if (i < 0) {
+        return flag == 0 ? 0 : Integer.MIN_VALUE;
+    }
+    if (flag == 0) {
+        return Math.max(dfs(prices, i-1, 0), dfs(prices, i-1, 1) - prices[i]);
+    }else {
+        return Math.max(dfs(prices, i-1, 1), dfs(prices, i-1, 0) + prices[i]);
+    }
+	
+}
+
+~~~
+
+![image-20240514130944628](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240514130944628.png)
+
+
+
 ### 309
 
 309.买卖股票的最佳时机含冷冻期：https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/
