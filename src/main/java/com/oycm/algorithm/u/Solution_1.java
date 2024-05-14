@@ -82,12 +82,26 @@ public class Solution_1 {
         return dp[i][flag];
     }
 
+    // 递推实现
+    public int method_4(int[] prices) {
+        int n = prices.length;
+        int[][] dp = new int[n][2];
+        dp[0][0] = 0;
+        dp[0][1] = Integer.MIN_VALUE;
+        for (int i = 1; i < prices.length; i++) {
+            dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] - prices[i]);
+        }
+        return dp[prices.length-1][0];
+    }
+
     public static void main(String[] args) {
         Solution_1 solution = new Solution_1();
         int[] prices = {7, 1, 5, 3, 6, 4};
         System.out.println(solution.method_1(prices));
         System.out.println(solution.method_2(prices));
         System.out.println(solution.method_3(prices));
+        System.out.println(solution.method_4(prices));
 
     }
 }
