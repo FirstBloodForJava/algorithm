@@ -99,11 +99,36 @@ public class Solution_3 {
         return dp[n][k+1][0];
     }
 
+    // 递推+空间优化
+    public int method_4(int k, int[] prices) {
+        int min = -10000000;
+        int[][] dp = new int[k+2][2];
+        // 初始化dp[0][k][flag]
+        for (int i = 0; i < k+2; i++) {
+            if (i == 0) {
+                dp[i][0] = min;
+            }
+            dp[i][1] = min;
+
+        }
+
+        // 下一层只使用上一层的元素，但是k+1修改之后会被k+2使用到，所以倒叙遍历
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = k+1; j >0 ; j--) {
+                dp[j][0] = Math.max(dp[j][0], dp[j-1][1] + prices[i]);
+                dp[j][1] = Math.max(dp[j][1], dp[j][0] - prices[i]);
+            }
+        }
+
+        return dp[k+1][0];
+    }
+
     public static void main(String[] args) {
         Solution_3 solution = new Solution_3();
         int[] prices = {3, 2, 6, 5, 0, 3};
         System.out.println(solution.method_1(2, prices));
         System.out.println(solution.method_2(2, prices));
         System.out.println(solution.method_3(2, prices));
+        System.out.println(solution.method_4(2, prices));
     }
 }
