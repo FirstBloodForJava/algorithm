@@ -65,4 +65,28 @@ public class Solution_1 {
     public int method_3(String s) {
         return 0;
     }
+
+    // 递推，从两边到中间
+    // dfs(i, j)
+    // s[i] == s[j] dfs(i, j) = dfs(i+1, j-1) + 2
+    // s[i] != s[j] dfs(i, j) = max(dfs(i+1, j), dfs(i, j-1))
+    public int method_4(String s) {
+        int[][] dp = new int[s.length()][s.length()];
+        for (int[] ints : dp) {
+            Arrays.fill(ints, -1);
+        }
+        return dfs(s.toCharArray(), 0, s.length()-1, dp);
+    }
+
+    public int dfs(char[] s, int i, int j, int[][] dp) {
+        if (i > j) return 0;
+        if (i == j) return 1;
+        if (dp[i][j] != -1) return dp[i][j];
+        if (s[i] == s[j]) {
+            dp[i][j] = dfs(s, i+1, j-1, dp) + 2;
+        }else {
+            dp[i][j] = Math.max(dfs(s, i+1, j, dp), dfs(s, i, j-1, dp));
+        }
+        return dp[i][j];
+    }
 }
