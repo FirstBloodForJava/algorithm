@@ -68,10 +68,42 @@ public class Solution_3 {
         return dp[i][k][flag];
     }
 
+    // 边界条件 dfs(i, k, flag)
+    // dfs(*, -1, *) = 负无穷; dp[i][0][flag] = min
+    // dfs(-1, *, 0) = 0;      dp[0][k][0] = 0  (k>=1)
+    // dfs(-1, *, 1) = 负无穷; dp[0][k][1] = min (k>=1)
+    // i: [0, n]; k: [0, k+1]
+    public int method_3(int k, int[] prices) {
+        // 递推实现
+        int min = -10000000;
+        int n = prices.length;
+        int[][][] dp = new int[n+1][k+2][2];
+
+        // 次数边界初始化
+        for (int i = 0; i <= n; i++) {
+            dp[i][0][0] = min;
+            dp[i][0][1] = min;
+        }
+
+        // 股票持有边界初始化 [0][k][1] k>=1 负无穷
+        for (int i = 1; i < k+2; i++) {
+            dp[0][i][1] = min;
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < k+2; j++) {
+                dp[i+1][j][0] = Math.max(dp[i][j][0], dp[i][j-1][1] + prices[i]);
+                dp[i+1][j][1] = Math.max(dp[i][j][1], dp[i][j][0] - prices[i]);
+            }
+        }
+
+        return dp[n][k+1][0];
+    }
+
     public static void main(String[] args) {
         Solution_3 solution = new Solution_3();
         int[] prices = {3, 2, 6, 5, 0, 3};
         System.out.println(solution.method_1(2, prices));
         System.out.println(solution.method_2(2, prices));
+        System.out.println(solution.method_3(2, prices));
     }
 }
