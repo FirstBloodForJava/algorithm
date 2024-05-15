@@ -89,4 +89,22 @@ public class Solution_1 {
         }
         return dp[i][j];
     }
+
+    // 动态规划
+    public int method_5(String s) {
+        int n = s.length();
+        char[] t = s.toCharArray();
+        int[][] dp = new int[n][n];
+        for (int i = n-1; i >=0 ; i--) {
+            dp[i][i] = 1;
+            for (int j = i+1; j < n; j++) {
+                if (t[i] == t[j]) {
+                    dp[i][j] = dp[i+1][j-1] +2;
+                } else {
+                    dp[i][j] = Math.max(dp[i][j-1], dp[i+1][j]);
+                }
+            }
+        }
+        return dp[0][n-1];
+    }
 }
