@@ -109,6 +109,11 @@ public class Solution_1 {
     // dp 动态规划
     public int method_3(int[] nums) {
         int n = nums.length;
+        // dp[i] 表示i结尾的LIS
+        // 如果nums[i+1] < nums[i] i+1的LIS肯定是 dp[i+1] <= dp[i]
+        // 如果nums[i+1] > nums[i] dp[i+1]的nums[i+1] 和 前面的nums[0]比到nums[i] j表示
+        // nums[i+1] > nums[j] 则dp[i] = max(dp[j], dp[i])继承前面最大的LIS，最后再自增1
+        // 当dp[i] = 0,意味这这个nums[i] <= num[j] (0<=j<i)，i的结尾的子序列只能是自己
         int[] dp = new int[n];
         int ans = 0;
         for (int i = 0; i < n; i++) {
