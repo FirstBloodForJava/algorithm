@@ -37,4 +37,27 @@ public class Solution_1 {
         }
         return dp[i][j];
     }
+
+    // 递推
+    public int method_2(String s) {
+        int n = s.length();
+        char[] t = new char[s.length()];
+        char[] ts = s.toCharArray();
+        for (int i = 0; i < s.toCharArray().length; i++) {
+            t[n-i-1] = ts[i];
+        }
+        int[][] dp = new int[n+1][n+1];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (ts[i] == t[j]) {
+                    dp[i+1][j+1] = dp[i][j] + 1;
+                }else {
+                    dp[i+1][j+1] = Math.max(dp[i][j+1], dp[i+1][j]);
+                }
+            }
+        }
+
+        return dp[n][n];
+    }
 }
