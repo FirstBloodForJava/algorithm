@@ -1121,6 +1121,57 @@ dfs(-1, *, 1) = 负无穷;
 
 ### 恰好k次交易的最大金额
 
+当交易次数k>length/2 + 1不可能完成
+
+~~~java
+public int dfs(int k, int i, int flag, int[] prices){
+	// k < 0 不合法
+	if (k < 0 ) {
+		return min;
+	}
+	if (i < 0) {
+		if (k > 0 || flag == 1) {
+			return min;
+		}else {
+			return 0;
+		}
+	}
+	if (flag == 1) {
+	return Math.max(dfs(k, i-1, 1, prices), dfs(k-1, i-1, 0, prices) - prices[i]);
+	}
+    return Math.max(dfs(k, i-1, 0, prices), dfs(k, i-1, 1, prices) + prices[i]);
+}
+
+~~~
+
+
+
+
+
+### 至少k次交易的最大金额
+
+当交易次数k=0，转换成了不限制交易次数，同122
+
+~~~java
+public int dfs(int k, int i, int flag, int[] prices){
+	if (i < 0) {
+        // 到最后一天，还剩交易次数，不合法
+		if (k > 0 || flag == 1) {
+			return min;
+		}else {
+			return 0;
+		}
+	}
+	if (flag == 1) {
+	return Math.max(dfs(k, i-1, 1, prices), dfs(k-1, i-1, 0, prices) - prices[i]);
+	}
+    return Math.max(dfs(k, i-1, 0, prices), dfs(k, i-1, 1, prices) + prices[i]);
+}
+
+~~~
+
+
+
 
 
 
