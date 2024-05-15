@@ -1184,6 +1184,24 @@ public int dfs(int k, int i, int flag, int[] prices){
 
 ![image-20240504162423444](http://47.101.155.205/image-20240504162423444.png)
 
+#### 思路一
+
+反转s得到revertS，求s与revertS的最长公共子序列
+
+~~~java
+// 最长公共子序列 s[i] t[j] 
+// s[i]=t[j] 选+1
+// s[i]!=t[j] 不选s[i]选t[j]/选s[i]不选t[j]
+dfs(i,j);
+// 边界条件
+dfs(-1,*)=0;
+dfs(*,-1)=0;
+~~~
+
+
+
+
+
 ### 1039
 
 1039.多边形三角剖分的最低得分：https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/
