@@ -23,6 +23,7 @@ public class Solution_2 {
         return dfs(0, n-1, values, dp);
     }
 
+    // dp[i][j] 表示顶点i顺时针到顶点j
     public int dfs(int i, int j, int[] values, int[][] dp) {
         if (i+1 == j) return 0;
         if (dp[i][j] != -1) return dp[i][j];
@@ -32,5 +33,16 @@ public class Solution_2 {
         }
         dp[i][j] = temp;
         return dp[i][j];
+    }
+
+
+    public int method_2(int[] values) {
+        int n = values.length;
+        int[][] dp = new int[n][n];
+
+
+
+
+        return dp[0][n-1];
     }
 }
