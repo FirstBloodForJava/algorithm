@@ -39,10 +39,23 @@ public class Solution_2 {
     public int method_2(int[] values) {
         int n = values.length;
         int[][] dp = new int[n][n];
+        for (int i = n-3; i >= 0; i--) {
+            for (int j = i+2; j < n; j++) {
+                dp[i][j] = Integer.MAX_VALUE;
+                for (int k = i+1; k < j; k++) {
+                    dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k][j] + values[i]*values[j]*values[k]);
+                }
 
-
-
-
+            }
+        }
         return dp[0][n-1];
+    }
+
+    public static void main(String[] args) {
+        Solution_2 solution = new Solution_2();
+        int[] values = {1,3,1,4,1,5};
+        System.out.println(solution.method_1(values));
+        System.out.println(solution.method_2(values));
+
     }
 }
