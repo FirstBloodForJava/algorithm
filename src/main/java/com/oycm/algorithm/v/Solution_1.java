@@ -95,16 +95,27 @@ public class Solution_1 {
         int n = s.length();
         char[] t = s.toCharArray();
         int[][] dp = new int[n][n];
+        // dp[i][j] 表示在字符串下标内的，i到j之间的最长回文字串长度，0<=i<=j<n
+        // 当i=j,自己就是回文串dp[i][j] = 1; 当i>j时，不可能组成字符串dp[i][j] = 0
+        // 当i<j时,就需要考虑s[i]和s[j]相不相等的情况
+        // s[i] == s[j], dp[i][j] = s[i+1][j-1] + 2
+        // s[i] != s[j], dp[i][j] = max(s[i][j-1], s[i+1][j])中选最大
+        // 怎么遍历的问题? 状态转义方程都是从长度较短的字符串到长度较长的字符串，要注意动态规划的顺序
         for (int i = n-1; i >=0 ; i--) {
             dp[i][i] = 1;
             for (int j = i+1; j < n; j++) {
                 if (t[i] == t[j]) {
-                    dp[i][j] = dp[i+1][j-1] +2;
+                    dp[i][j] = dp[i+1][j-1] + 2;
                 } else {
                     dp[i][j] = Math.max(dp[i][j-1], dp[i+1][j]);
                 }
             }
         }
         return dp[0][n-1];
+    }
+
+    public static void main(String[] args) {
+        Solution_1 solution = new Solution_1();
+
     }
 }
