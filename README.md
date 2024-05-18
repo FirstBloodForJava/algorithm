@@ -1278,6 +1278,10 @@ dfs(*,-1)=0;
 
 
 
+![image-20240518150847325](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240518150847325.png)
+
+
+
 ## z.单调栈
 
 ### 739
