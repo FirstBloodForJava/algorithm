@@ -31,4 +31,21 @@ public class Solution_1 {
         }
         return answer;
     }
+
+    // 从左到右
+    public int[] method_2(int[] temperatures) {
+        int n = temperatures.length;
+        int[] answer = new int[n];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < temperatures.length; i++) {
+            // 找到之前栈中的最大温度
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int j = stack.pop();
+                answer[j] = i - j;
+            }
+            stack.push(i);
+        }
+
+        return answer;
+    }
 }
