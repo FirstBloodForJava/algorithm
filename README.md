@@ -1278,9 +1278,9 @@ dfs(*,-1)=0;
 
 
 
-![image-20240518150847325](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240518150847325.png)
+![image-20240518150847325](http://47.101.155.205/image-20240518150847325.png)
 
-
+![image-20240518154043938](http://47.101.155.205/image-20240518154043938.png)
 
 ## z.单调栈
 

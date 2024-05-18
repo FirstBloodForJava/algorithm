@@ -26,4 +26,15 @@ public class Solution_1 {
         int cChose = Math.min(Math.min(l[0] + r[2], l[0] + r[0]), r[0] + l[2]);
         return new int[]{chose, fChose, cChose};
     }
+
+    // 计算公式优化
+    public int[] dfs_simple(TreeNode node) {
+        if (node == null) return new int[] {10000, 0, 0};
+        int[] l = dfs_simple(node.left);
+        int[] r = dfs_simple(node.right);
+        int chose = Math.min(l[0], l[1]) + Math.min(r[0], r[1]) + 1;
+        int fChose = Math.min(l[0], l[2]) + Math.min(r[0], r[2]);
+        int cChose = fChose + Math.max(0, Math.min(l[0] - l[2], r[0] - r[2]));
+        return new int[] {chose, fChose, cChose};
+    }
 }
