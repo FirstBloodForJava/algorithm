@@ -13,7 +13,7 @@ public class Solution_1 {
     }
 
     /**
-     *
+     * 34.在排序数组中查找元素的第一个和最后一个位置：https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/
      * @param nums 升序数组
      * @param target 目标值
      * @return 目标值在元素中出现的开始位置

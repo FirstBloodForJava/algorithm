@@ -10,6 +10,12 @@ public class Solution_1 {
 
     }
 
+    /**
+     * 209.长度最小的子数组：https://leetcode.cn/problems/minimum-size-subarray-sum/description/
+     * @param target
+     * @param nums
+     * @return
+     */
     public int minSubArrayLen(int target, int[] nums) {
         return method_1(target, nums);
     }

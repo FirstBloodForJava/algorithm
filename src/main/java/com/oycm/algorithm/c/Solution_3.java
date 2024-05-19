@@ -17,7 +17,7 @@ public class Solution_3 {
     }
 
     /**
-     *
+     * 3.无重复字符的最长字串：https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
      * @param s 由英文字母、数字、符号和空格组成的字符串
      * @return 无重复字符子串的最长长度
      */

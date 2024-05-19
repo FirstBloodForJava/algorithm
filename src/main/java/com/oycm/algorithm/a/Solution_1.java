@@ -15,6 +15,12 @@ public class Solution_1 {
         System.out.println(ints[1]);
     }
 
+    /**
+     * 1.两数之和：https://leetcode.cn/problems/two-sum/description/
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] twoSum(int[] nums, int target) {
         return method_1(nums, target);
     }

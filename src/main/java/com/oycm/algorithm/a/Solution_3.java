@@ -14,6 +14,11 @@ public class Solution_3 {
         int[] ints = {0, 0, 0, 0, 0};
     }
 
+    /**
+     * 15.三数之和：https://leetcode.cn/problems/3sum/description
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
 
         return method_1(nums);

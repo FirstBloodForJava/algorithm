@@ -12,6 +12,12 @@ public class Solution_2 {
         int[] ints = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         System.out.println(trap(ints));
     }
+
+    /**
+     * 42.接雨水：https://leetcode.cn/problems/trapping-rain-water/description/
+     * @param height
+     * @return
+     */
     public static int trap(int[] height) {
 
         return method_4(height);

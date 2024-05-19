@@ -16,7 +16,7 @@ public class Solution_2 {
     }
 
     /**
-     *
+     * 713.乘积小于K的子数组：https://leetcode.cn/problems/subarray-product-less-than-k/description/
      * @param nums 正数的数组
      * @param k 给定的整数k
      * @return nums中严格小于k的连续子数组个数

@@ -8,6 +8,11 @@ public class Solution_1 {
         System.out.println(result);
     }
 
+    /**
+     * 11.盛最多水的容器：https://leetcode.cn/problems/container-with-most-water/description
+     * @param height
+     * @return
+     */
     public static int maxArea(int[] height) {
 
         return method_1(height);

@@ -8,6 +8,12 @@ import java.util.Arrays;
  */
 public class Solution_2 {
 
+    /**
+     * 167.两数之和II-输入有序数组：https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description
+     * @param numbers
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] numbers, int target) {
         return method_1(numbers,target);
     }
