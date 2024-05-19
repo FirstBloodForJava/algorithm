@@ -15,7 +15,7 @@ public class Solution_2 {
         Stack<Integer> stack = new Stack<>();
         int ans = 0;
         for (int i = 0; i < height.length; i++) {
-            // 栈中还有元素，且大于等于栈顶元素
+            // 栈中还有元素，且大于等于栈顶元素，保证栈顶到栈底是单调递增的(底到顶是单调递减的)
             while (!stack.isEmpty() && height[i] >= height[stack.peek()]) {
                 // 栈顶的高
                 Integer pop = stack.pop();
