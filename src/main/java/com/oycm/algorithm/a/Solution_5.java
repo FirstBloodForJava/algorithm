@@ -57,9 +57,9 @@ public class Solution_5 {
                         c--;
                         // 保证不重复记录答案
                         while (b < c) {
-                            if (nums[b] == nums[b+1]){
+                            if (nums[b] == nums[b-1]){
                                 b++;
-                            } else if (nums[c] == nums[c-1]) {
+                            } else if (nums[c] == nums[c+1]) {
                                 c--;
                             } else {
                                 break;
@@ -70,6 +70,7 @@ public class Solution_5 {
                 d--;
                 // 保证不重复记录答案(a,d)中右答案，nums[d-1] == nums[d],那么(a, d-1)中符合要求的答案，肯定也在其中
                 while (d > a + 2) {
+                    // 为什么是+1? d是自减的，要和前面算过了的比，所以是和+1比
                     if (nums[d] == nums[d+1]) {
                         d--;
                     }else {
@@ -85,8 +86,8 @@ public class Solution_5 {
 
     public static void main(String[] args) {
         Solution_5 solution = new Solution_5();
-        int[] nums = {0, 0, 0, 1000000000, 1000000000, 1000000000, 1000000000};
-        int target = 1000000000;
+        int[] nums = {1,0,-1,0,-2,2};
+        int target = 0;
         System.out.println(solution.method_1(nums, target));
     }
 }
