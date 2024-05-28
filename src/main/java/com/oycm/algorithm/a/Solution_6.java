@@ -35,9 +35,26 @@ public class Solution_6 {
         return false;
     }
 
+    // 滑动窗口优化空间，i先在[0,k]区间移动，在这个范围内有重复值，则返回结果，当i>k时，需要移除最左边的元素，在剩余的元素中判断是否有重复元素
+    public boolean method_2(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (i > k) {
+                map.remove(nums[i-k-1]);
+            }
+            if (map.put(nums[i], i) != null) return true;
+
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         Solution_6 solution = new Solution_6();
-        int[] nums = {1, 0, 1, 1};
-        System.out.println(solution.containsNearbyDuplicate(nums, 1));
+        int[] nums = {1, 2, 3, 1, 2, 3};
+        int k = 2;
+        System.out.println(solution.containsNearbyDuplicate(nums, k));
+        System.out.println(solution.method_2(nums, k));
     }
 }
