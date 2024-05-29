@@ -50,7 +50,7 @@ public class Solution_2 {
         return result;
     }
 
-    // 双指针
+    // 双指针: 计算每个下标i能接多少雨水
     public static int method_2(int[] height){
         int result = 0;
         int leftMax = 0;
@@ -96,7 +96,9 @@ public class Solution_2 {
         return result;
     }
 
-    // 单调栈
+    // 栈: 先进后出,后进先出
+    // 这里的栈: 从栈顶到栈底是递增,节水的条件是要形成盆地: 下坡再上坡
+    // 单调栈: 计算情况:栈中至少要有两个元素才能和当前的高围成一个盆地
     public static int method_4(int[] height){
         int result = 0;
         Stack<Integer> stack = new Stack<>();
