@@ -198,7 +198,286 @@ while (s >= k) {
 
 3.无重复字符的最长字串：https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 
-![image-20240403210531655](http://47.101.155.205/image-20240403210531655.png)
+![
+
+](http://47.101.155.205/image-20240403210531655.png)
+
+
+
+## ca.定长滑动窗口
+
+### 1456-1263
+
+1456.定长子串中元音的最大数目: https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
+
+![image-20240529210843747](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529210843747.png)
+
+
+
+### 2269-1280
+
+2269.找到一个数字的K美丽值: https://leetcode.cn/problems/find-the-k-beauty-of-a-number/description/
+
+![image-20240529211028079](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211028079.png)
+
+
+
+### 1984-1306
+
+1984.学生分数的最小差值: https://leetcode.cn/problems/minimum-difference-between-highest-and-lowest-of-k-scores/description/
+
+![image-20240529211222956](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211222956.png)
+
+
+
+### 643
+
+643.子数组最大平均数I: https://leetcode.cn/problems/maximum-average-subarray-i/description/
+
+![image-20240529211356317](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211356317.png)
+
+
+
+### 1343-1317
+
+1343.大小为K且平均值大于等于阈值的子数组数目: https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/
+
+![image-20240529211514872](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211514872.png)
+
+
+
+### 2090-1358
+
+2090.半径为k的子数组平均值: https://leetcode.cn/problems/k-radius-subarray-averages/description/
+
+
+
+
+
+### 2379-1360
+
+
+
+### 1052-1418
+
+
+
+### 2841-1546
+
+
+
+### 2461-1553
+
+
+
+### 1423-1574
+
+
+
+### 2134-1748
+
+
+
+### 2653-1786
+
+
+
+### 567
+
+
+
+### 438
+
+
+
+### 2156-2063
+
+
+
+### 2963-2449
+
+
+
+
+
+
+
+## cb.不定长滑动窗口(求最长/最大)
+
+### 3
+
+
+
+### 1493-1423
+
+
+
+### 2730-1502
+
+
+
+### 904-1516
+
+
+
+### 1695-1529
+
+
+
+### 2958-1535
+
+
+
+### 2024-1643
+
+
+
+### 1004-1656
+
+
+
+### 1438-1672
+
+
+
+### 2401-1750
+
+
+
+### 1658-1817
+
+
+
+### 1838-1876
+
+
+
+### 2516-1948
+
+
+
+### 2831-1976
+
+
+
+### 2106-2062
+
+
+
+### 1610-2147
+
+
+
+### 2781-2204
+
+
+
+### 2968-2444
+
+
+
+### 395
+
+
+
+### 1763
+
+
+
+
+
+
+## cc.不定长滑动窗口(求最短/最小)
+
+### 209
+
+
+
+### 1234-1878
+
+
+
+### 1574-1932
+
+
+
+### 76
+
+
+
+### 面试题 17.18. 最短超串
+
+
+
+
+
+
+
+
+
+## cd.不定长滑动窗口(求子数组个数)
+
+### 2799-1398
+
+
+
+### 713
+
+
+
+### 1358-1646
+
+
+
+### 2962-1701
+
+
+
+### 2302-1808
+
+
+
+### 2537-1892
+
+
+
+### 2762-1940
+
+
+
+### 2972-2153
+
+
+
+
+
+## ce.多指针滑动窗口
+
+### 930-1592
+
+
+
+### 1248-1624
+
+
+
+### 2563-1721
+
+
+
+### 1712-2079
+
+
+
+### 2444-2093
+
+
+
+### 992-2210
+
+
+
+
 
 
 
