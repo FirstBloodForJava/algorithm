@@ -1,5 +1,6 @@
 package com.oycm.algorithm.a;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Solution_11 {
@@ -24,5 +25,25 @@ public class Solution_11 {
         return ans;
     }
 
+    public int method_2(List<Integer> nums, int target) {
 
+        // 由于a + b == b + a,所以可以对数组进行排序
+        // 从left=0,right=size-1
+        // 如果left + right < target,则以left开始,到right的都是小于target的,计算完left++
+        // 如果left + right >= target,则任意和right组合都会>=target,right--
+        // 循环退出条件left == right
+        int ans = 0;
+        int left = 0;
+        int right = nums.size() - 1;
+        Collections.sort(nums);
+        while (left < right) {
+            if (nums.get(left) + nums.get(right) < target) {
+                ans += right - left;
+                left++;
+            }else {
+                right--;
+            }
+        }
+        return ans;
+    }
 }
