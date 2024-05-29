@@ -31,6 +31,7 @@ public class Solution_10 {
     }
 
     /**
+     * 辗转相除法求最大公约数
      * @param x
      * @param y
      * @return x 和 y的最大公因数 结果为1表示互质
