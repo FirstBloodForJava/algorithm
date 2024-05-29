@@ -64,9 +64,23 @@ public class Solution_8 {
         return right;
     }
 
+    // 前面是从左到有i=0, j[1,n)的组合情况,这里从左到右边，看这个小的组合中组合情况，就不用上面的查找了
+    public int method_2(int[] time) {
+        int ans = 0;
+        int[] catchAns = new int[60];
+
+        for (int i = 0; i < time.length; i++) {
+            // 先计算再更新
+            ans += catchAns[(60-time[i]%60)%60];
+            catchAns[time[i]%60]++;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         Solution_8 solution = new Solution_8();
         int[] time = {30, 20, 150, 100, 40};
         System.out.println(solution.numPairsDivisibleBy60(time));
+        System.out.println(solution.method_2(time));
     }
 }
