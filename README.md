@@ -210,7 +210,7 @@ while (s >= k) {
 
 1456.定长子串中元音的最大数目: https://leetcode.cn/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
 
-![image-20240529210843747](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529210843747.png)
+![image-20240529210843747](http://47.101.155.205/image-20240529210843747.png)
 
 
 
@@ -218,7 +218,7 @@ while (s >= k) {
 
 2269.找到一个数字的K美丽值: https://leetcode.cn/problems/find-the-k-beauty-of-a-number/description/
 
-![image-20240529211028079](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211028079.png)
+![image-20240529211028079](http://47.101.155.205/image-20240529211028079.png)
 
 
 
@@ -226,7 +226,7 @@ while (s >= k) {
 
 1984.学生分数的最小差值: https://leetcode.cn/problems/minimum-difference-between-highest-and-lowest-of-k-scores/description/
 
-![image-20240529211222956](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211222956.png)
+![image-20240529211222956](http://47.101.155.205/image-20240529211222956.png)
 
 
 
@@ -234,7 +234,7 @@ while (s >= k) {
 
 643.子数组最大平均数I: https://leetcode.cn/problems/maximum-average-subarray-i/description/
 
-![image-20240529211356317](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211356317.png)
+![image-20240529211356317](http://47.101.155.205/image-20240529211356317.png)
 
 
 
@@ -242,7 +242,7 @@ while (s >= k) {
 
 1343.大小为K且平均值大于等于阈值的子数组数目: https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/
 
-![image-20240529211514872](C:\Users\oycm\AppData\Roaming\Typora\typora-user-images\image-20240529211514872.png)
+![image-20240529211514872](http://47.101.155.205/image-20240529211514872.png)
 
 
 
