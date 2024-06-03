@@ -198,9 +198,7 @@ while (s >= k) {
 
 3.无重复字符的最长字串：https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 
-![
-
-](http://47.101.155.205/image-20240403210531655.png)
+![image-20240403210531655.png](http://47.101.155.205/image-20240403210531655.png)
 
 
 
@@ -306,9 +304,17 @@ while (s >= k) {
 
 ### 3
 
+3.无重复字符的最长字串：https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
+
+![image-20240403210531655.png](http://47.101.155.205/image-20240403210531655.png)
+
 
 
 ### 1493-1423
+
+1493.删掉一个元素以后全为 1 的最长子数组：https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/description/
+
+![image-20240603212201074](http://47.101.155.205/image-20240603212201074.png)
 
 
 
