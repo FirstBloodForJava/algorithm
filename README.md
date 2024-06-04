@@ -429,7 +429,9 @@ while (s >= k) {
 
 ### 面试题 17.18. 最短超串
 
+面试题 17.18. 最短超串：https://leetcode.cn/problems/shortest-supersequence-lcci/
 
+![image-20240604214119174](http://47.101.155.205/image-20240604214119174.png)
 
 
 
