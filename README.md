@@ -423,7 +423,9 @@ while (s >= k) {
 
 ### 76
 
+76.最小覆盖子串：https://leetcode.cn/problems/minimum-window-substring/
 
+![image-20240604213500193](http://47.101.155.205/image-20240604213500193.png)
 
 ### 面试题 17.18. 最短超串
 
