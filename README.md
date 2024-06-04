@@ -320,7 +320,9 @@ while (s >= k) {
 
 ### 2730-1502
 
+2730.找到最长的半重复子字符串：https://leetcode.cn/problems/find-the-longest-semi-repetitive-substring/
 
+![image-20240604103903707](http://47.101.155.205/image-20240604103903707.png)
 
 ### 904-1516
 
