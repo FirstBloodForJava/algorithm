@@ -399,9 +399,17 @@ while (s >= k) {
 
 ### 209
 
+209.长度最小的子数组：https://leetcode.cn/problems/minimum-size-subarray-sum/description/
+
+![image-20240403210230162](http://47.101.155.205/image-20240403210230162.png)
+
 
 
 ### 1234-1878
+
+1234.替换子串得到平衡字符串：https://leetcode.cn/problems/replace-the-substring-for-balanced-string/
+
+![image-20240604135935102](http://47.101.155.205/image-20240604135935102.png)
 
 
 
