@@ -415,6 +415,10 @@ while (s >= k) {
 
 ### 1574-1932
 
+1574.删除最短的子数组使剩余数组有序：https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/
+
+![image-20240604212929879](http://47.101.155.205/image-20240604212929879.png)
+
 
 
 ### 76
