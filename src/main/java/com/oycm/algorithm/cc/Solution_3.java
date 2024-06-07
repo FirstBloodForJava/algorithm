@@ -29,7 +29,7 @@ public class Solution_3 {
                 right++;
             }
             // 通过指针巧妙的移动，避免了重复计算：暴力法，左边非递减和右边非递减组合
-            // 到这里要么right = n,或arr[left] <= arr[right](且arr[left-1] <= arr[left]),需要删除[left+1, right)
+            // 到这里要么right = n,或arr[left] <= arr[right](且arr[left-1] <= arr[left]),需要删除[left+1, right)，这里不管哪种情况，都是需要删除left+1，
             ans = Math.min(ans, right - left - 1);
             left++;
         }
@@ -50,10 +50,14 @@ public class Solution_3 {
         // 删除[left+1, n-1] n-1 -(left+1) +1
         int ans = n - left - 1;
         int right = n - 1;
-        // 递减
-        while (right == n-1 || arr[right-1] <= arr[right]) {
-
-
+        // 递减,这个循环一定会退出,因为不退出,就意味着数组是非递减的,前面以及返回答案了
+        while (right == n-1 || arr[right] <= arr[right+1]) {
+            // left = -1,[0,right)删除 或 arr[left] < arr[right] [left+1,right)删除
+            while (left >= 0 && arr[left] > arr[right]) {
+                left--;
+            }
+            ans = Math.min(ans, right - left - 1);
+            right--;
         }
 
         return ans;
@@ -63,9 +67,13 @@ public class Solution_3 {
         Solution_3 solution = new Solution_3();
         int[] arr1 = {1, 2, 3, 10, 4, 2, 3, 5};
         int[] arr2 = {5, 4, 3, 2, 1};
-        int[] arr3 = {1, 2, 3};
+        int[] arr3 = {2, 1};
         System.out.println(solution.findLengthOfShortestSubarray(arr1));
         System.out.println(solution.findLengthOfShortestSubarray(arr2));
         System.out.println(solution.findLengthOfShortestSubarray(arr3));
+
+        System.out.println(solution.leftToRight(arr1));
+        System.out.println(solution.leftToRight(arr2));
+        System.out.println(solution.leftToRight(arr3));
     }
 }
