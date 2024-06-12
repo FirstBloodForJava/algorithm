@@ -32,7 +32,8 @@ public class Solution_4 {
             ++countS[charS[right]];
 
             // 遍历countS中t相关字母出现次数,如果出现次数都大于等于countT中出现的次数
-            while (right - left + 1 >= t.length() && check(t, countT, countS)) {
+            boolean checkFlag = true;
+            while (right - left + 1 >= t.length() && checkFlag && check(t, countT, countS)) {
 
                 // 如果right - left < ansRight - ansLeft 记录答案
                 if (right - left < ansRight - ansLeft) {
@@ -42,6 +43,9 @@ public class Solution_4 {
 
                 // left向右移动
                 --countS[charS[left]];
+                if (countS[charS[left]] < countT[charS[left]]) {
+                    checkFlag = false;
+                }
                 left++;
             }
         }
@@ -52,14 +56,19 @@ public class Solution_4 {
     }
 
     public boolean check(String t, int[] countT, int[] countS) {
-        boolean flag = true;
-        for (char c : t.toCharArray()) {
-            if (countS[c] < countT[c]) {
-                flag = false;
-                break;
+
+        for (int i = 'A'; i <= 'Z'; i++) {
+            if (countS[i] < countT[i]) {
+                return false;
             }
         }
-        return flag;
+
+        for (int i = 'a'; i <= 'z'; i++) {
+            if (countS[i] < countT[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -67,5 +76,8 @@ public class Solution_4 {
         String t = "ABC";
         Solution_4 solution = new Solution_4();
         System.out.println(solution.minWindow(s, t));
+
+        System.out.println((int)'a');
+        System.out.println((int)'Z');
     }
 }
