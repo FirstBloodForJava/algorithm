@@ -443,9 +443,17 @@ while (s >= k) {
 
 ### 2799-1398
 
+2799.统计完全子数组的数目：https://leetcode.cn/problems/count-complete-subarrays-in-an-array/
+
+![image-20240612212908257](http://47.101.155.205/image-20240612212908257.png)
+
 
 
 ### 713
+
+713.乘积小于K的子数组：https://leetcode.cn/problems/subarray-product-less-than-k/description/
+
+![image-20240403210405436](http://47.101.155.205/image-20240403210405436.png)
 
 
 
