@@ -35,6 +35,7 @@ public class Solution_1_2779 {
             }
 
             // [left, right]是一个完全子数组,right到n-1的子数组都符合要求
+            // 这里为什么不需要考虑[0,left]的子数组情况因为left是从0开始的
             while (rMap.size() == cache.size()) {
                 ans += n- right;
                 // 这个时候左指针右移
