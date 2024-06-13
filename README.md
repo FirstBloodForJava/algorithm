@@ -497,13 +497,27 @@ while (s >= k) {
 
 ### 930-1592
 
+930.和相同的二元子数组: https://leetcode.cn/problems/binary-subarrays-with-sum/description/
+
+![image-20240613215230011](http://47.101.155.205/image-20240613215230011.png)
+
 
 
 ### 1248-1624
 
+1248.统计[优美子数组]https://leetcode.cn/problems/count-number-of-nice-subarrays/
+
+![image-20240613215230011](http://47.101.155.205/image-20240613215624749.png)
+
 
 
 ### 2563-1721
+
+2563.统计公平数对的数目: https://leetcode.cn/problems/count-the-number-of-fair-pairs/
+
+![image-20240613215230011](http://47.101.155.205/image-20240613215824638.png)
+
+
 
 
 
