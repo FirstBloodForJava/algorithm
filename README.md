@@ -459,13 +459,23 @@ while (s >= k) {
 
 ### 1358-1646
 
+1358.包含所有三种字符的子字符串数目: https://leetcode.cn/problems/number-of-substrings-containing-all-three-characters/description/
 
+![image-20240613213831312](http://47.101.155.205/image-20240613213831312.png)
 
 ### 2962-1701
+
+2962.统计最大元素出现至少K次的子数组: https://leetcode.cn/problems/count-subarrays-where-max-element-appears-at-least-k-times/description/
+
+![image-20240613214222372](http://47.101.155.205/image-20240613214222372.png)
 
 
 
 ### 2302-1808
+
+2302.统计得分小于K的子数组数目: https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/description/
+
+![image-20240613214510985](http://47.101.155.205/image-20240613214510985.png)
 
 
 
