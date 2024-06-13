@@ -4,7 +4,7 @@ public class Solution_4 {
 
     /**
      * 76.最小覆盖子串：https://leetcode.cn/problems/minimum-window-substring/
-     * 时间复杂度O(52t + s)
+     * 时间复杂度O(52s + t)
      * @param s
      * @param t
      * @return s的最小字串：需要包含t所有字符的(顺序没有要求，相同数量保持一致)
