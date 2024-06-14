@@ -10,6 +10,29 @@ public class Solution_3_1358 {
     public int numberOfSubstrings(String s) {
         int ans = 0;
 
+        int n = s.length();
+        char[] chars = s.toCharArray();
+
+        int[] cache = new int['d'];
+        int left = 0;
+        for (int right = 0; right < n; right++) {
+            cache[chars[right]]++;
+            while (cache['a'] >= 1 && cache['b'] >= 1 && cache['c'] >= 1) {
+                ans += n - right;
+                cache[chars[left]]--;
+                left++;
+            }
+        }
+
         return ans;
+    }
+
+    public static void main(String[] args) {
+
+        String s = "abc";
+
+        Solution_3_1358 solution = new Solution_3_1358();
+        System.out.println(solution.numberOfSubstrings(s));
+
     }
 }
