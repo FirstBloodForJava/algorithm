@@ -674,16 +674,26 @@ public int searchBound(int[] nums, int target) {
 
 ### 1283-1542
 
+1283.使结果不超过阈值的最小除数: https://leetcode.cn/problems/find-the-smallest-divisor-given-a-threshold/
 
+![image-20240616223004160](http://47.101.155.205/image-20240616223004160.png)
 
 
 
 
 ### 2187-1641
 
+2187.完成旅途的最少时间: https://leetcode.cn/problems/minimum-time-to-complete-trips/description/
+
+![image-20240616223730012](http://47.101.155.205/image-20240616223730012.png)
+
 
 
 ### 2871-1676
+
+2871.将数组分割成最多数目的子数组: https://leetcode.cn/problems/split-array-into-maximum-number-of-subarrays/description/
+
+![image-20240616224220828](http://47.101.155.205/image-20240616224220828.png)
 
 
 
