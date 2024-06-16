@@ -588,25 +588,49 @@ public int searchBound(int[] nums, int target) {
 
 ### 35
 
+35.搜索插入位置: https://leetcode.cn/problems/search-insert-position/description/
+
+![image-20240616214656444](http://47.101.155.205/image-20240616214656444.png)
+
 
 
 ### 704
+
+704.二分查找: https://leetcode.cn/problems/binary-search/description/
+
+![image-20240616215521989](http://47.101.155.205/image-20240616215521989.png)
 
 
 
 ### 744
 
+744.寻找比目标字母大的最小字母: https://leetcode.cn/problems/find-smallest-letter-greater-than-target/description/
+
+![image-20240616215901825](http://47.101.155.205/image-20240616215901825.png)
+
 
 
 ### 2529
+
+2529.正整数和负整数的最大计数: https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/description/
+
+![image-20240616220541278](http://47.101.155.205/image-20240616220541278.png)
 
 
 
 ### 2300-1400
 
+2300.咒语和药水的成功对数: https://leetcode.cn/problems/successful-pairs-of-spells-and-potions/description/
+
+![image-20240616220919399](http://47.101.155.205/image-20240616220919399.png)
+
 
 
 ### 2389
+
+2389.和有限的最长子序列: https://leetcode.cn/problems/longest-subsequence-with-limited-sum/description/
+
+![image-20240616221521830](http://47.101.155.205/image-20240616221521830.png)
 
 
 
