@@ -34,6 +34,32 @@ public class Solution_1_1283 {
         return ans;
     }
 
+    public int method_2(int[] nums, int threshold) {
+        int ans = 1;
+        // 除数范围可为[1,无穷],题意的除数范围: [1,max(nums[i])],在这个范围内组成的阈值数组是非递增的
+        // 这里的二分查找边界是什么? 第一个大于阈值+1就是答案
+        int max = 0;
+        for (int num : nums) {
+            max = Math.max(max, num);
+        }
+        int left = 1;
+        int right = max;
+        // [left,right]是非递增数组,在这里面找第一个大于threshold的index,然后+1
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int tempThreshold = calculateNumsSum(nums, mid);
+            // 为什么right不用mid-1,因为这里是半开半闭区间,只能一边移动
+            if (tempThreshold <= threshold) {
+                right = mid - 1;
+            }else {
+                left = mid + 1;
+                ans = left;
+            }
+        }
+
+        return ans;
+    }
+
     // 计算阈值
     public int calculateNumsSum(int[] nums, int divisor) {
         int ans = 0;
@@ -62,6 +88,6 @@ public class Solution_1_1283 {
         Solution_1_1283 solution = new Solution_1_1283();
         int[] nums = {2,3,5,7,11};
         int threshold = 11;
-        System.out.println(solution.smallestDivisor(nums, threshold));
+        System.out.println(solution.method_2(nums, threshold));
     }
 }
