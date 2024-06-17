@@ -10,6 +10,24 @@ public class Solution_4_744 {
      */
     public char nextGreatestLetter(char[] letters, char target) {
 
-        return ' ';
+        int left = 0;
+        int right = letters.length;
+        while (left < right) {
+            int mid = (right + left) / 2;
+            if (letters[mid] <= target) {
+                left = mid + 1;
+            }else {
+                right = mid;
+            }
+        }
+
+        return right == letters.length ? letters[0] : letters[right];
+    }
+
+    public static void main(String[] args) {
+        char[] letters = {'c','f','j'};
+        char target = 'z';
+        Solution_4_744 solution = new Solution_4_744();
+        System.out.println(solution.nextGreatestLetter(letters, target));
     }
 }
