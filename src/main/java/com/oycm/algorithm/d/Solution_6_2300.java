@@ -1,5 +1,8 @@
 package com.oycm.algorithm.d;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class Solution_6_2300 {
 
     /**
@@ -10,7 +13,38 @@ public class Solution_6_2300 {
      * @return 第i个诅咒成功组合
      */
     public int[] successfulPairs(int[] spells, int[] potions, long success) {
+        int[] ans = new int[spells.length];
 
-        return null;
+        // 对药水进行排序处理
+        Arrays.sort(potions);
+        for (int i = 0; i < spells.length; i++) {
+            ans[i] = potions.length - binarySearchFirst(potions, spells[i], success);
+        }
+
+        return ans;
+    }
+
+    public int binarySearchFirst(int[] potions, long multiple, long target) {
+        int left = 0;
+        int right = potions.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (potions[mid] * multiple >= target) {
+                right = mid;
+            }else {
+                left = mid + 1;
+            }
+
+        }
+        return right;
+    }
+
+    public static void main(String[] args) {
+        int[] spells = {3,1,2};
+        int[] potions = {8,5,8};
+        long success = 16;
+        Solution_6_2300 solution = new Solution_6_2300();
+        System.out.println(Arrays.stream(solution.successfulPairs(spells, potions, success)).mapToObj(String::valueOf).collect(Collectors.joining(",", "[", "]")));
+
     }
 }
