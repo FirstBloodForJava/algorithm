@@ -22,7 +22,7 @@ public class Solution_1_1283 {
         while (left < right) {
             int mid = left + (right - left) / 2;
             int tempThreshold = calculateNumsSum(nums, mid);
-            // 为什么right不用mid-1
+            // 为什么right不用mid-1,因为这里是半开半闭区间,只能一边移动
             if (tempThreshold <= threshold) {
                 right = mid;
             }else {
