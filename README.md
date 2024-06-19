@@ -683,7 +683,7 @@ public int searchBound(int[] nums, int target) {
 
 
 
-### 2187-1641(贪心)
+### 2187-1641
 
 2187.完成旅途的最少时间: https://leetcode.cn/problems/minimum-time-to-complete-trips/description/
 
@@ -745,27 +745,59 @@ public int searchBound(int[] nums, int target) {
 
 ### 275
 
+275.H指数 II: https://leetcode.cn/problems/h-index-ii/
+
+![image-20240619150824009](http://47.101.155.205/image-20240619150824009.png)
+
+
+
 
 
 ### 2226-1646
+
+每个小孩最多能分到多少糖果: https://leetcode.cn/problems/maximum-candies-allocated-to-k-children/
+
+![image-20240619152709309](http://47.101.155.205/image-20240619152709309.png)
 
 
 
 ### 1898-1913
 
+1898.可移除字符的最大数目: https://leetcode.cn/problems/maximum-number-of-removable-characters/
+
+![image-20240619153629436](http://47.101.155.205/image-20240619153629436.png)
+
+![image-20240619154746461](http://47.101.155.205/image-20240619154746461.png)
+
 
 
 ### 1802-1929
+
+1802.有界数组中指定下标处的最大值: https://leetcode.cn/problems/maximum-value-at-a-given-index-in-a-bounded-array/
+
+![image-20240619162502816](http://47.101.155.205/image-20240619162502816.png)
 
 
 
 ### 1642-1962
 
+1642.可以到达的最远建筑: https://leetcode.cn/problems/furthest-building-you-can-reach/
+
+![image-20240619164509969](http://47.101.155.205/image-20240619164509969.png)
+
+![image-20240619164440780](http://47.101.155.205/image-20240619164440780.png)
+
+
+
 
 
 ### 2861-1981
 
+2861.最大合金数: https://leetcode.cn/problems/maximum-number-of-alloys/
 
+![image-20240619165034198](http://47.101.155.205/image-20240619165034198.png)
+
+![image-20240619165144188](http://47.101.155.205/image-20240619165144188.png)
 
 
 
