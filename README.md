@@ -681,15 +681,25 @@ public int searchBound(int[] nums, int target) {
 
 
 
-### 2187-1641
+
+
+### 2187-1641(贪心)
 
 2187.完成旅途的最少时间: https://leetcode.cn/problems/minimum-time-to-complete-trips/description/
 
 ![image-20240616223730012](http://47.101.155.205/image-20240616223730012.png)
 
+### 1870-1676
+
+1870.准时到达的列车最小时速: https://leetcode.cn/problems/minimum-speed-to-arrive-on-time/
+
+![image-20240619150346435](http://47.101.155.205/image-20240619150346435.png)
+
+![image-20240619150402347](http://47.101.155.205/image-20240619150402347.png)
 
 
-### 2871-1676
+
+### 2871(贪心)
 
 2871.将数组分割成最多数目的子数组: https://leetcode.cn/problems/split-array-into-maximum-number-of-subarrays/description/
 
