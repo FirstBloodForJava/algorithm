@@ -24,7 +24,7 @@ public class Solution_3_1870 {
         // [1, maxSpeed]对于hour访问[maxHour,n]
 
         int ans = 1;
-        while (left <= right) {
+        /*while (left <= right) {
             int mid = left + (right - left) / 2;
             if (calculateHourByDist(dist, mid) > hour) {
                 left = mid + 1;
@@ -32,9 +32,21 @@ public class Solution_3_1870 {
                 ans = mid;
                 right = mid - 1;
             }
+        }*/
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (calculateHourByDist(dist, mid) > hour) {
+                left = mid + 1;
+            }else {
+                if (mid == 2) {
+                    System.out.println();
+                }
+                right = mid;
+            }
         }
 
-        return ans;
+        return left == 0 ? ans : right;
     }
 
     public double calculateHourByDist(int[] dist, int speed) {
