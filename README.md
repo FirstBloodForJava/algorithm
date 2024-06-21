@@ -672,6 +672,59 @@ public int searchBound(int[] nums, int target) {
 
 ## da.二分查找-求最小
 
+### 模板
+
+非递增数组，找第一个大于等于target的index
+
+~~~java
+// 半开半闭
+while (left < right) {
+    int mid = left + (right - left) / 2;
+    if (nums[mid] >= target) {
+        right = mid;
+    }else{
+        left = mid + 1;
+    }
+}
+// rigth == nums.length,nums所有元素都小于target
+return rigth == nums.length ? 根据情况返回 : right; 
+
+~~~
+
+
+
+非递增数组，找第一个大于等于target的index
+
+~~~java
+// 半开半闭
+while (left < right) {
+    int mid = left + (right - left) / 2;
+    if (nums[mid] > target) {
+        left = mid + 1;
+    }else {
+        right = mid;
+    }
+}
+// left == 0,nums所有元素都小于target
+return left == 0 ? 根据情况返回 : right;
+
+// 闭区间
+whild (left <= right) {
+    int mid = left + (right - left) / 2;
+    if (nums[mid] > target) {
+        left = mid + 1;
+    }else {
+        right = mid - 1;
+    }
+}
+return right + 1;
+
+~~~
+
+
+
+
+
 ### 1283-1542
 
 1283.使结果不超过阈值的最小除数: https://leetcode.cn/problems/find-the-smallest-divisor-given-a-threshold/
@@ -742,6 +795,15 @@ public int searchBound(int[] nums, int target) {
 
 
 ## db.二分查找-求最大
+
+### 模板
+
+~~~java
+
+
+~~~
+
+
 
 ### 275
 
