@@ -20,8 +20,34 @@ public class Solution_4_1802 {
      * @return eg: 2
      */
     public int maxValue(int n, int index, int maxSum) {
-        int ans = 0;
+        int ans = 1;
+        // _/\_ 数组类似这样的走势时,sums <= maxSum时,nums[index]所对应的值才会是最大
+        // min(sums)随着nums[index]的增大而增大
+        if (maxSum == n) {
+            return ans;
+        }
+        int left = ans;
+        int right = maxSum;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            int minSums = calculate(n, index, mid);
+        }
 
         return ans;
+    }
+
+    private int calculate(int n, int index, int max) {
+        int minSum = max;
+
+        /*if (max > index) {
+            minSum += (max + max - index) / 2 * (n + 1);
+        }else {
+            minSum += (1 + max) / 2 * max + n - max + 1;
+        }*/
+
+        int left = index;
+        while (left >= 0)
+
+        return minSum;
     }
 }
