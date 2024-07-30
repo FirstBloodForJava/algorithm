@@ -28,26 +28,42 @@ public class Solution_4_1802 {
         }
         int left = ans;
         int right = maxSum;
-        while (left < right) {
+        // 这里使用闭区间
+        while (left <= right) {
             int mid = left + (right - left) / 2;
-            int minSums = calculate(n, index, mid);
+            long minSums = calculate(n, index, mid);
+            if (minSums > maxSum) {
+                right = mid - 1;
+            }else {
+                ans = mid;
+                left = mid + 1;
+            }
         }
 
         return ans;
     }
 
-    private int calculate(int n, int index, int max) {
-        int minSum = max;
+    // 使用long避免计算精度溢出
+    private long calculate(long n, long index, long max) {
+        long minSum = 0;
 
-        /*if (max > index) {
-            minSum += (max + max - index) / 2 * (n + 1);
+        if (max > index) {
+            minSum = (max + max - index) * (index + 1) / 2 ;
         }else {
-            minSum += (1 + max) / 2 * max + n - max + 1;
-        }*/
-
-        int left = index;
-        while (left >= 0)
-
+            minSum += (1 + max) * max / 2  + index - max + 1;
+        }
+        long right = n - index;
+        if (max >= right) {
+            minSum += (max + max - right + 1) * right / 2 ;
+        }else {
+            minSum += (1 + max) * max / 2  + right - max;
+        }
+        minSum -= max;
         return minSum;
+    }
+
+    public static void main(String[] args) {
+        Solution_4_1802 solution = new Solution_4_1802();
+        System.out.println(solution.maxValue(3, 0, 815094800));
     }
 }
