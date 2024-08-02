@@ -42,10 +42,10 @@ public class Solution_6_2861 {
 
         return ans;
     }
-    public boolean isBuild(int budget, List<List<Integer>> composition, List<Integer> stock, List<Integer> cost, int x) {
+    public boolean isBuild(int budget, List<List<Integer>> composition, List<Integer> stock, List<Integer> cost, long x) {
 
         for (List<Integer> amount : composition) {
-            int charge = 0;
+            long charge = 0;
             for (int i = 0; i < amount.size(); i++) {
                 charge += cost.get(i) * (amount.get(i) * x - stock.get(i));
             }
