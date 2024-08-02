@@ -21,6 +21,7 @@ public class Solution_6_2861 {
      * composition.length  == k
      * composition[i].length == n
      * stock.length == cost.length == n
+     * 时间复杂度 O(lg2*10^8 * n * k)
      */
     public int maxNumberOfAlloys(int n, int k, int budget, List<List<Integer>> composition, List<Integer> stock, List<Integer> cost) {
         int ans = 0;
