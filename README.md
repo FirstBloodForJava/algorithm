@@ -883,31 +883,59 @@ return right + 1;
 
 ### 3143-1600
 
+3143.正方形中的最多点数：https://leetcode.cn/problems/maximum-points-inside-the-square/description/
+
+![image-20240806162401928](http://47.101.155.205/image-20240806162401928.png)
+
 
 
 ## dd.最小化最大值
 
 ### 410
 
+410.分割数组的最大值：https://leetcode.cn/problems/split-array-largest-sum/description/
+
+![image-20240806163520009](http://47.101.155.205/image-20240806163520009.png)
+
 
 
 ### 2064-1886
+
+2064.分配给商店的最多商品的最小值：https://leetcode.cn/problems/minimized-maximum-of-products-distributed-to-any-store/description/
+
+![image-20240806164215119](http://47.101.155.205/image-20240806164215119.png)
 
 
 
 ### 1760-1940
 
+1760.袋子里最少数目的球：https://leetcode.cn/problems/minimum-limit-of-balls-in-a-bag/description/
+
+![image-20240806165345591](http://47.101.155.205/image-20240806165345591.png)
+
 
 
 ### 1631-1948
+
+1631.最小体力消耗路径：https://leetcode.cn/problems/path-with-minimum-effort/
+
+![image-20240806165722408](http://47.101.155.205/image-20240806165722408.png)
 
 
 
 ### 2439-1965
 
+2439.最小化数组中的最大值：https://leetcode.cn/problems/minimize-maximum-of-array/
+
+![image-20240806165855283](http://47.101.155.205/image-20240806165855283.png)
+
 
 
 ### 2560-2081
+
+2560.打家劫舍IV：https://leetcode.cn/problems/house-robber-iv/
+
+![image-20240806170052757](http://47.101.155.205/image-20240806170052757.png)
 
 
 
