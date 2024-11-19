@@ -1,5 +1,10 @@
 package com.oycm.algorithm.dc;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author ouyangcm
  * create 2024/8/6 16:22
@@ -18,5 +23,38 @@ public class Solution_1_3143 {
         int ans = 0;
 
         return ans;
+    }
+
+    public static void main(String[] args) throws URISyntaxException {
+
+        //
+        String pattern = "(?<=^(?:https?|ftps?)://)[^:/]+(?::\\d+)?(?:/v\\d+)?(?=/)";
+        Pattern compile = Pattern.compile(pattern);
+        Matcher matcher = compile.matcher("http://localhost:8080/v1/demo/get");
+
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+        System.out.println(matcher.matches());
+
+        System.out.println(matcher.replaceFirst("go"));
+
+
+        System.out.println(Pattern.compile("[a-zA-Z]([a-zA-Z]|\\d|\\+|\\.|-)*:.*").matcher("//localhost:8080/v1/demo/get").matches());
+
+        System.out.println("password=123&".replaceAll("password=[^&]+", "$0123"));
+
+        URI uri = new URI("ws://localhost:3001");
+
+        System.out.println(uri);
+
+        Object i = 1;
+        System.out.println(i.toString());
+        uri = null;
+        System.out.println("a\r1");
+
+        System.out.println("\u001c");
+
+        System.out.println(Pattern.compile("[\\p{Cc}\\p{Cn}\\p{Co}\\p{So}\\p{Mn}]").matcher("\u001c\u0020").replaceAll("?"));
     }
 }
